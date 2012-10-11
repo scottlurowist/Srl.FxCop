@@ -1,0 +1,3 @@
+/out:"C:\My Prototypes\Srl.FxCop.DeveloperTestRules\Srl.DeveloperTestRules\bin\Debug\results.xml"
+/file:"C:\My Prototypes\Srl.FxCop.DeveloperTestRules\Srl.DeveloperTestRules\bin\Debug\Srl.DeveloperTestRules.TestTarget.dll" 
+/rule:"C:\My Prototypes\Srl.FxCop.DeveloperTestRules\Srl.DeveloperTestRules\bin\Debug\Srl.DeveloperTestRules.dll"

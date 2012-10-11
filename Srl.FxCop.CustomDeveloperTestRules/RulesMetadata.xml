@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rules FriendlyName="Custom Developer Test Rules">
+  
+  <!-- Do Not Confuse RhinoMocks Stubs With Mocks -->
+  <Rule TypeName="DoNotConfuseRhinoMocksStubsWithMocks" Category="DeveloperTestRules" CheckId="TR1001">
+    <FixCategories>NonBreaking</FixCategories>
+    <Description>Checks that stubs are not being confused with mocks.</Description>
+    <Email>scottlurowist@gmail.com</Email>
+    <MessageLevel Certainty="99">Error</MessageLevel>
+    <Name>Do Not Confuse RhinoMocks Stubs With Mocks</Name>
+    <Owner>Scott Lurowist</Owner>
+    <Resolution Name="VerifyAllOnStub">Do not invoke Rhino Mocks 'VerifyAllExpectations' on a stub in method '{0}' for instance variable '{1}' Change the stub to a mock.</Resolution>
+    <Resolution Name="StubOnMock">Do not invoke Stub on a mock in method '{0}' for instance field '{1}'. Change the mock to a stub.</Resolution>    
+    <Url></Url>
+  </Rule>  
+  
+</Rules>

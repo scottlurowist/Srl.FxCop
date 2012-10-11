@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Rules FriendlyName="Developer Test Rules">
+  
+  <!-- Check For CoverageExcludeAttribute Existence -->
+  <Rule TypeName="CoverageExcludeUsage" Category="DeveloperTestRules" CheckId="TR1000">
+    <FixCategories>NonBreaking</FixCategories>
+    <Description>Checks for the use of the CoverageExclude attribute.</Description>
+    <Email>Scott.Lurowist@Srl.com</Email>   
+    <MessageLevel Certainty="99">Information</MessageLevel>
+    <Name>Check For CoverageExcludeAttribute Existence</Name>
+    <Owner>Scott Lurowist</Owner>
+    <Resolution>The use of [CoverageExclude] requires approval.</Resolution>
+    <Url>https://mhsprod.jira.com/wiki/display/TPPCXT/Srl+TPP+Developer+Test+Rules+For+FxCop</Url>
+  </Rule>
+
+  <!-- Avoid Logic InTest Methods -->
+  <Rule TypeName="AvoidLogicInTestMethods" Category="DeveloperTestRules" CheckId="TR1001">
+    <FixCategories>NonBreaking</FixCategories>
+    <Description>Checks for the use of logic in test methods.</Description>
+    <Email>Scott.Lurowist@Srl.com</Email>
+    <MessageLevel Certainty="50">Information</MessageLevel>
+    <Name>Avoid Logic In Test Methods</Name>
+    <Owner>Scott Lurowist</Owner>
+    <Resolution>The use of logic is discouraged in tests methods, except for setup and teardown code.</Resolution>
+    <Url>https://mhsprod.jira.com/wiki/display/TPPCXT/Srl+TPP+Developer+Test+Rules+For+FxCop</Url>
+  </Rule>
+
+  <!-- Declare Test Methods Correctly -->
+  <Rule TypeName="DeclareTestMethodsCorrectly" Category="DeveloperTestRules" CheckId="TR1002">
+    <FixCategories>NonBreaking</FixCategories>
+    <Description>Checks that test methods have the proper signature.</Description>
+    <Email>Scott.Lurowist@Srl.com</Email>
+    <MessageLevel Certainty="99">Error</MessageLevel>
+    <Name>Declare Test Methods Correctly</Name>
+    <Owner>Scott Lurowist</Owner>
+    <Resolution Name="void">Change the return type to void.</Resolution>
+    <Resolution Name="params">Remove the parameters from the test method.</Resolution>    
+    <Url>https://mhsprod.jira.com/wiki/display/TPPCXT/Srl+TPP+Developer+Test+Rules+For+FxCop</Url>
+  </Rule>
+
+  <!-- Do Not Use More Than One Mock Per Test -->
+  <Rule TypeName="DoNotUseMoreThanOneMockPerTest" Category="DeveloperTestRules" CheckId="TR1003">
+    <FixCategories>NonBreaking</FixCategories>
+    <Description>Checks for the use of more than one mock per test.</Description>
+    <Email>Scott.Lurowist@Srl.com</Email>
+    <MessageLevel Certainty="99">Error</MessageLevel>
+    <Name>Do Not Use More Than One Mock Per Test</Name>
+    <Owner>Scott Lurowist</Owner>
+    <Resolution>Do Not Use More Than One Mock Per Test.</Resolution>
+    <Url>https://mhsprod.jira.com/wiki/display/TPPCXT/Srl+TPP+Developer+Test+Rules+For+FxCop</Url>
+  </Rule>
+
+  <!-- Do Not Verify Mocks In Teardown Method -->
+  <Rule TypeName="DoNotVerifyMocksInTeardownMethod" Category="DeveloperTestRules" CheckId="TR1004">
+    <FixCategories>NonBreaking</FixCategories>
+    <Description>Checks that mocks are not being verified in TearDown methods.</Description>
+    <Email>Scott.Lurowist@Srl.com</Email>
+    <MessageLevel Certainty="99">Error</MessageLevel>
+    <Name>Do Not Verify Mocks In Teardown Method</Name>
+    <Owner>Scott Lurowist</Owner>
+    <Resolution>Do not invoke VerifyAllExpections on RhinoMocks created mocks in the teardown method.</Resolution>
+    <Url>https://mhsprod.jira.com/wiki/display/TPPCXT/Srl+TPP+Developer+Test+Rules+For+FxCop</Url>
+  </Rule>
+
+  <!-- Do Not Confuse Mocks With Stubs -->
+  <Rule TypeName="DoNotConfuseMocksWithStubs" Category="DeveloperTestRules" CheckId="TR1005">
+    <FixCategories>NonBreaking</FixCategories>
+    <Description>Checks that stubs are not being confused with mocks.</Description>
+    <Email>Scott.Lurowist@Srl.com</Email>
+    <MessageLevel Certainty="99">Error</MessageLevel>
+    <Name>Do Not Confuse Mocks With Stubs</Name>
+    <Owner>Scott Lurowist</Owner>
+    <Resolution Name="VerifyAllOnStub">Do not invoke VerifyAllExpectations on a stub in method "{0}" for instance field "{1}". Change the stub to a mock.</Resolution>
+    <Resolution Name="StubOnMock">Do not invoke Stub on a mock in method "{0}" for instance field "{1}". Change the mock to a stub.</Resolution>    
+    <Url>https://mhsprod.jira.com/wiki/display/TPPCXT/Srl+TPP+Developer+Test+Rules+For+FxCop</Url>
+  </Rule>  
+  
+</Rules>
