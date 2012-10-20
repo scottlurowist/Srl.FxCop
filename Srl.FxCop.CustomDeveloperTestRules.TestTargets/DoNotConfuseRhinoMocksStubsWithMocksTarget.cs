@@ -57,6 +57,13 @@ namespace Srl.FxCop.CustomDeveloperTestRules.TestTargets
 
 
         [Test]
+        public void TestMethodWhereAFieldStubIsInvokedWithStub()
+        {
+            _barStub.Stub(x => x.DoSomethingBarRelated());
+        }
+
+
+        [Test]
         public void TestMethodWhereTwoFieldStubsAreInvokedWithVerifyAllExpectations()
         {
             _barStub.VerifyAllExpectations();
