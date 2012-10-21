@@ -1,6 +1,6 @@
-/out:"C:\My Prototypes\Srl.FxCop\results.xml" /file:"C:\My Prototypes\Srl.FxCop\Srl.FxCop.CustomDeveloperTestRules.TestTargets\bin\x86\Debug\Srl.FxCop.CustomDeveloperTestRules.TestTargets.dll" /rule:"C:\My Prototypes\Srl.FxCop\Srl.FxCop.CustomDeveloperTestRules\bin\x86\Debug\Srl.FxCop.CustomDeveloperTestRules.dll"
+/out:"C:\GitRepos\Srl.FxCop\results.xml" /file:"C:\GitRepos\Srl.FxCop\Srl.FxCop.CustomDeveloperTestRules.TestTargets\bin\x86\Debug\Srl.FxCop.CustomDeveloperTestRules.TestTargets.dll" /rule:"C:\GitRepos\Srl.FxCop\Srl.FxCop.CustomDeveloperTestRules\bin\x86\Debug\Srl.FxCop.CustomDeveloperTestRules.dll"
 
 
 Working Directory:
 
-C:\My Prototypes\Srl.FxCop\Srl.FxCop.CustomDeveloperTestRules\bin\x86\Debug\
+C:\GitRepos\Srl.FxCop\Srl.FxCop.CustomDeveloperTestRules\bin\x86\Debug\
