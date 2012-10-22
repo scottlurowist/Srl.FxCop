@@ -1,4 +1,4 @@
-﻿//
+﻿﻿//
 // DoNotConfuseRhinoMocksStubsWithMocksHelper.cs
 //
 // Product:
