@@ -181,7 +181,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction.OpCode = OpCode.Ldfld;
             // TODO: Replace with a custom type.
             instruction.Value =
-                "Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget._barStub";
+                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget._barStub}";
 
             instructionList.Add(instruction);
 
