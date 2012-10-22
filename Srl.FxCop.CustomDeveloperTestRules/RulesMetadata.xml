@@ -10,6 +10,7 @@
     <Name>Do Not Confuse RhinoMocks Stubs With Mocks</Name>
     <Owner>Scott Lurowist</Owner>
     <Resolution Name="VerifyAllOnStub">Do not invoke Rhino Mocks 'VerifyAllExpectations' on a stub in method '{0}' for instance variable '{1}' Change the stub to a mock.</Resolution>
+    <Resolution Name="ExpectOnStub">Do not invoke Rhino Mocks 'Exepct' on a stub in method '{0}' for instance variable '{1}' Change the stub to a mock.</Resolution>    
     <Resolution Name="StubOnMock">Do not invoke Stub on a mock in method '{0}' for instance field '{1}'. Change the mock to a stub.</Resolution>    
     <Url></Url>
   </Rule>  

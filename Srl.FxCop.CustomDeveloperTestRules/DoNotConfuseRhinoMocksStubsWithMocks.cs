@@ -91,6 +91,11 @@ namespace Srl.FxCop.CustomDeveloperTestRules
                         methodCandidate.Name.Name,
                         setupMethodInstructions,
                         GetCustomInstructionListFromInstructionCollection(methodCandidate.Instructions)));
+
+                ProcessFoundProblems(helper.CheckIfRhinoMocksExpectIsInvokedOnAFieldThatIsAStub(
+                        methodCandidate.Name.Name,
+                        setupMethodInstructions,
+                        GetCustomInstructionListFromInstructionCollection(methodCandidate.Instructions)));
             }
 
             return Problems;

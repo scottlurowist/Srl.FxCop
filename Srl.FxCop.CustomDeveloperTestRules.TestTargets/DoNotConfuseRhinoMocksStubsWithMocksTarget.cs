@@ -49,21 +49,14 @@ namespace Srl.FxCop.CustomDeveloperTestRules.TestTargets
         }
 
 
-        [Test]
+        //[Test]
         public void TestMethodWhereAFieldStubIsInvokedWithVerifyAllExpectations()
         {
             _barStub.VerifyAllExpectations();
         }
 
 
-        [Test]
-        public void TestMethodWhereAFieldStubIsInvokedWithStub()
-        {
-            _barStub.Stub(x => x.DoSomethingBarRelated());
-        }
-
-
-        [Test]
+        //[Test]
         public void TestMethodWhereTwoFieldStubsAreInvokedWithVerifyAllExpectations()
         {
             _barStub.VerifyAllExpectations();
@@ -71,11 +64,18 @@ namespace Srl.FxCop.CustomDeveloperTestRules.TestTargets
         }
 
 
-        [Test]
+        //[Test]
         public void TestMethodWhereALocalStubIsInvokedWithVerifyAllExpectations()
         {
             IBar localStub = MockRepository.GenerateStub<IBar>();
             localStub.VerifyAllExpectations();
+        }
+
+
+        [Test]
+        public void TestMethodWhereAFieldStubIsInvokedWithExpect()
+        {
+            _barStub.Expect(x => x.DoSomethingBarRelated());
         }
 
 

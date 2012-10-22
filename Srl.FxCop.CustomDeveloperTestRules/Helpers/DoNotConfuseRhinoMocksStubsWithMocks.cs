@@ -157,5 +157,72 @@ namespace Srl.FxCop.CustomDeveloperTestRules.Helpers
 
             return problemsFound;
         }
+
+
+        /// <summary>
+        /// Checks if RhinoMocks's VerifyAllExpectations model is called on a field stub.
+        /// </summary>
+        /// <param name="methodName">
+        /// The name of the method that is currently being procesed by FxCop.
+        /// </param>
+        /// <param name="setupMethodInstructions">
+        /// A list of CustomInstruction that represents the instructions for a setup method, if
+        /// a setup method exists for the test.
+        /// </param>
+        /// <param name="testMethodInstructions">
+        /// A list of CustomInstruction that represents the instructions for the test method that
+        /// FxCop is analyzing.
+        /// </param>
+        public IList<CustomProblem> CheckIfRhinoMocksExpectIsInvokedOnAFieldThatIsAStub(String methodName,
+            IList<CustomInstruction> setupMethodInstructions,
+            IList<CustomInstruction> testMethodInstructions)
+        {
+            IList<CustomProblem> problemsFound = new List<CustomProblem>();
+
+            int instructionCounter = 0;
+
+            foreach (var customInstruction in testMethodInstructions)
+            {
+                // Ldfld will load a field and if the next instruction is a Call, then it will
+                // invoke a method on the field just loaded.
+                if (customInstruction.OpCode == OpCode.Call && 
+                    customInstruction.Value.ToString().Contains("Rhino.Mocks.RhinoMocksExtensions.Expect"))
+                {
+                    int x = 4;
+
+                    // The Expect method is an extension method. So, the first argument to the Call opcode
+                    // will be the mock or stub instance. The second arg will the be the method to call
+                    // on the mock or stub. This appears as a lamda expression in the original source code.
+                    // Let us find these arguments in our set of customInstruction.
+                    int expectCallOffset = customInstruction.Offset;
+                    
+                    // The previous instruction should be our lamda expresion.
+                    int lamdaExpressionOFfset = testMethodInstructions[instructionCounter - 1].Offset;
+
+                    // Find the branch instruction that branched to lamdaExpressionOffset. That branch
+                    // instruction checks that the delegate that represents the lamda expression does
+                    // indeed exist. Value on the instruction object will be the offset.
+                    int count = 0;
+
+                    foreach (var testMethodInstruction in testMethodInstructions)
+                    {
+                        if (testMethodInstruction.OpCode == OpCode.Brtrue_S &&
+                            testMethodInstruction.Value.ToString() == Convert.ToString(lamdaExpressionOFfset))
+                        {
+                            // The previous instruction will load the lamda expression onto the VES.
+                            // The instruction before that will load the mock or stub onto the VES.
+                            string mockOrStubName =
+                                testMethodInstructions[count - 2].Value.ToString().Split('.').Last().TrimEnd('}');
+                        }
+
+                        count++;
+                    }
+                }
+
+                instructionCounter++;
+            }
+
+            return problemsFound;
+        }
     }
 }

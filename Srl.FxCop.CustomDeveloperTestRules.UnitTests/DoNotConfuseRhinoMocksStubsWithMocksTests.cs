@@ -131,7 +131,41 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             const int expectedNumberOfProblemsFound = 0;  // We used a stub correctly.
 
             Assert.That(problemsFound.Count, Is.EqualTo(expectedNumberOfProblemsFound));
+        }
 
+
+        [Test]
+        public void CanRaiseProblemWhenAFieldStubIsInvokedWithExpect()
+        {
+            // Arrange
+            IList<CustomInstruction> setupMethodInstructions = GetListOfCustomInstructionForSetupMethod();
+
+            IList<CustomInstruction> instructionsForMethod =
+                GetInstructionsForCanRaiseProblemWhenAFieldStubIsInvokedWithExpect();
+
+            var helper = new Helpers.DoNotConfuseRhinoMocksStubsWithMocks();
+
+            const string testMethodBeingAnalyzed = "TestMethodWhereAFieldStubIsInvokedWithExpect";
+
+
+            // Act
+            IList<CustomProblem> problemsFound = helper.
+                CheckIfRhinoMocksExpectIsInvokedOnAFieldThatIsAStub(
+                    testMethodBeingAnalyzed,
+                    setupMethodInstructions,
+                    instructionsForMethod);
+
+
+            // Assert
+            const int expectedNumberOfProblemsFound = 1;
+            const string expectedResolutionNameInXmlMetadataFile = "ExpectOnStub";
+            const string expectedFieldNameArgument = "_barStub"; // The field that has the problem.
+
+            Assert.That(problemsFound.Count, Is.EqualTo(expectedNumberOfProblemsFound));
+            Assert.That(problemsFound[0].ResolutionName, Is.EqualTo(expectedResolutionNameInXmlMetadataFile));
+            Assert.That(problemsFound[0].ResolutionArguments.Length, Is.EqualTo(2));
+            Assert.That(problemsFound[0].ResolutionArguments[0], Is.EqualTo(testMethodBeingAnalyzed));
+            Assert.That(problemsFound[0].ResolutionArguments[1], Is.EqualTo(expectedFieldNameArgument));          
         }
 
 
@@ -427,7 +461,6 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
         }
 
 
-
         /// <summary>
         /// Gets the instructions for the test CannotRaiseProblemWhenAFieldStubOnlyInvokesStub.
         /// </summary>
@@ -547,6 +580,148 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction.OpCode = OpCode.Call;
             instruction.Value =
                 "{Rhino.Mocks.RhinoMocksExtensions.Stub<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 14.
+            instruction = new CustomInstruction();
+            instruction.Offset = 43;
+            instruction.OpCode = OpCode.Pop;
+            instruction.Value = null;
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 15.
+            instruction = new CustomInstruction();
+            instruction.Offset = 44;
+            instruction.OpCode = OpCode.Ret;
+            instruction.Value = null;
+
+            instructionList.Add(instruction);
+
+            return instructionList;
+        }
+
+
+        /// <summary>
+        /// Gets the instructions for the test CanRaiseProblemWhenAFieldStubIsInvokedWithExpect.
+        /// </summary>
+        /// <returns>
+        /// A list of instructions that was empirically obtained from
+        /// DoNotConfuseRhinoMocksStubsWithMocksTarget.cs
+        /// </returns>
+        private IList<CustomInstruction> GetInstructionsForCanRaiseProblemWhenAFieldStubIsInvokedWithExpect()
+        {
+            IList<CustomInstruction> instructionList = new List<CustomInstruction>();
+
+            // CIL Instruction 1.
+            CustomInstruction instruction = new CustomInstruction();
+            instruction.Offset = 0;
+            instruction.OpCode = OpCode._Locals;
+            instruction.Value = "{Microsoft.FxCop.Sdk.LocalCollection}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 2.
+            instruction = new CustomInstruction();
+            instruction.Offset = 0;
+            instruction.OpCode = OpCode.Nop;
+            instruction.Value = null;
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 3.
+            instruction = new CustomInstruction();
+            instruction.Offset = 1;
+            instruction.OpCode = OpCode.Ldarg_0;
+            instruction.Value =
+                "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget this}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 4.
+            instruction = new CustomInstruction();
+            instruction.Offset = 2;
+            instruction.OpCode = OpCode.Ldfld;
+            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget._barStub}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 5.
+            instruction = new CustomInstruction();
+            instruction.Offset = 7;
+            instruction.OpCode = OpCode.Ldsfld;
+            instruction.Value =
+                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget.CS$<>9__CachedAnonymousMethodDelegate1}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 6.
+            instruction = new CustomInstruction();
+            instruction.Offset = 12;
+            instruction.OpCode = OpCode.Brtrue_S;
+            instruction.Value = 33;
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 7.
+            instruction = new CustomInstruction();
+            instruction.Offset = 14;
+            instruction.OpCode = OpCode.Ldnull;
+            instruction.Value = null;
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 8.
+            instruction = new CustomInstruction();
+            instruction.Offset = 15;
+            instruction.OpCode = OpCode.Ldftn;
+            instruction.Value =
+                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget.<TestMethodWhereAFieldStubIsInvokedWithStub>b__0}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 9.
+            instruction = new CustomInstruction();
+            instruction.Offset = 21;
+            instruction.OpCode = OpCode.Newobj;
+            instruction.Value =
+                "{System.Action<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>(Microsoft.FxCop.Sdk.ParameterCollection)}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 10.
+            instruction = new CustomInstruction();
+            instruction.Offset = 26;
+            instruction.OpCode = OpCode.Stfld;
+            instruction.Value =
+                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget.CS$<>9__CachedAnonymousMethodDelegate1}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 11.
+            instruction = new CustomInstruction();
+            instruction.Offset = 31;
+            instruction.OpCode = OpCode.Br_S;
+            instruction.Value = "33";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 12.
+            instruction = new CustomInstruction();
+            instruction.Offset = 33;
+            instruction.OpCode = OpCode.Ldsfld;
+            instruction.Value =
+                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget.CS$<>9__CachedAnonymousMethodDelegate1}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 13.
+            instruction = new CustomInstruction();
+            instruction.Offset = 38;
+            instruction.OpCode = OpCode.Call;
+            instruction.Value =
+                "{Rhino.Mocks.RhinoMocksExtensions.Expect<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>}";
 
             instructionList.Add(instruction);
 
