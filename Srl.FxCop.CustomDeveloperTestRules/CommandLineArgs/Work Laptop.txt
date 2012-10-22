@@ -1,4 +1,9 @@
-/out:"C:\GitRepos\Srl.FxCop\results.xml" /file:"C:\GitRepos\Srl.FxCop\Srl.FxCop.CustomDeveloperTestRules.TestTargets\bin\x86\Debug\Srl.FxCop.CustomDeveloperTestRules.TestTargets.dll" /rule:"C:\GitRepos\Srl.FxCop\Srl.FxCop.CustomDeveloperTestRules\bin\x86\Debug\Srl.FxCop.CustomDeveloperTestRules.dll"
+/out:"C:\GitRepos\Srl.FxCop\results.xml"
+ /file:"C:\GitRepos\Srl.FxCop\Srl.FxCop.CustomDeveloperTestRules.TestTargets\bin\x86\Debug\Srl.FxCop.CustomDeveloperTestRules.TestTargets.dll" 
+ 
+ 
+ /file:"C:\Apollo_510\trunk\src\BusinessLibrary\Tests\Activities.Tests\bin\x64\Debug\McKesson.TPP.BusinessLibrary.Activities.Tests.dll"
+ /rule:"C:\GitRepos\Srl.FxCop\Srl.FxCop.CustomDeveloperTestRules\bin\x86\Debug\Srl.FxCop.CustomDeveloperTestRules.dll"
 
 
 Working Directory:

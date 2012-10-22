@@ -188,8 +188,6 @@ namespace Srl.FxCop.CustomDeveloperTestRules.Helpers
                 if (customInstruction.OpCode == OpCode.Call && 
                     customInstruction.Value.ToString().Contains("Rhino.Mocks.RhinoMocksExtensions.Expect"))
                 {
-                    int x = 4;
-
                     // The Expect method is an extension method. So, the first argument to the Call opcode
                     // will be the mock or stub instance. The second arg will the be the method to call
                     // on the mock or stub. This appears as a lamda expression in the original source code.
@@ -213,6 +211,32 @@ namespace Srl.FxCop.CustomDeveloperTestRules.Helpers
                             // The instruction before that will load the mock or stub onto the VES.
                             string mockOrStubName =
                                 testMethodInstructions[count - 2].Value.ToString().Split('.').Last().TrimEnd('}');
+
+                            int setupInstructionCounter = 0;
+
+                            foreach (var setupMethodInstruction in setupMethodInstructions)
+                            {
+                                if (setupMethodInstruction.OpCode == OpCode.Call &&
+                                    setupMethodInstruction.Value.ToString().Contains("GenerateStub"))
+                                {
+                                    // The next instructions MUST BE a stfld to store the new
+                                    // stub in the field.
+                                    var nextInstruction = setupMethodInstructions[setupInstructionCounter + 1];
+
+                                    if (nextInstruction.Value.ToString().Contains(mockOrStubName))
+                                    {
+                                        CustomProblem problem = new CustomProblem();
+                                        problem.ResolutionName = "ExpectOnStub";
+                                        problem.ResolutionArguments = new string[] { methodName, mockOrStubName };
+
+                                        problemsFound.Add(problem);
+
+                                        break;
+                                    }
+                                }
+
+                                setupInstructionCounter++;
+                            }
                         }
 
                         count++;
