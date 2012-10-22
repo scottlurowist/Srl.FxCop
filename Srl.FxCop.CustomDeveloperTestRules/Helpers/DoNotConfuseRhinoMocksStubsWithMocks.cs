@@ -66,7 +66,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.Helpers
                     testMethodInstructions[instructionCounter + 1].Value.ToString().Contains("VerifyAllExpectations"))
                 {
                     // Now check if the field is a stub.
-                    var fieldName = customInstruction.Value.ToString().Split('.').Last();
+                    var fieldName = customInstruction.Value.ToString().Split('.').Last().TrimEnd('}');
 
                     int setupInstructionCounter = 0;
 
