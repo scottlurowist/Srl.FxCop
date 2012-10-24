@@ -93,6 +93,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoNotInvokeRhinoMocksVerifyAllExpectationWithoutSettingExpectations.cs" />
     <Compile Include="DoNotConfuseRhinoMocksStubsWithMocksTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
