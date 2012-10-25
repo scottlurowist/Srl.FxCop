@@ -16,7 +16,6 @@
 
 #region Using Directives
 
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -46,7 +45,9 @@ namespace Srl.FxCop.CustomRuleSdk.DevTools
         public static void WriteInstructionListForMethodToTextFile(
             IList<CustomInstruction> instructionList, string filePath)
         {
-            File.WriteAllLines(filePath, instructionList.Select(x => x.ToString()).ToArray());
+            int instructionNumber = 0;
+
+            File.WriteAllLines(filePath, instructionList.Select(x => ((instructionNumber++) + " - " + x.ToString())).ToArray());
         }
     }
 }
