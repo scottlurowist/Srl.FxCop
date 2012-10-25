@@ -57,10 +57,8 @@ namespace Srl.FxCop.CustomRuleSdk
         /// </returns>
         public override string ToString()
         {
-            string valueAsString = (Value == null) ? "null": Value.ToString();
-
-            return string.Format("Opcode = {0, -10} Offset = {1, -5} Value = {2, -100}", 
-                OpCode, Convert.ToString(Offset), valueAsString);
+            return string.Format("Opcode = {0, -10} Offset = {1, -5} Value = {2, -100}",
+                OpCode, Convert.ToString(Offset), (Value == null) ? "null" : "{" + Value.ToString() + "}");
         }
     }  
 }
