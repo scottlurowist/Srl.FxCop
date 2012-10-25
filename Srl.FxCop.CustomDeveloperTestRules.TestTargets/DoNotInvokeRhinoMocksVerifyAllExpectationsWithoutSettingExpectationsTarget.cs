@@ -1,5 +1,5 @@
 ﻿//
-// DoNotInvokeRhinoMocksVerifyAllExpectationWithoutSettingExpectations.cs
+// DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.cs
 //
 // Product:
 //
@@ -31,15 +31,36 @@ namespace Srl.FxCop.CustomDeveloperTestRules.TestTargets
     /// invoked on a stub or mock and no expectations have been set.
     /// </summary>
     [TestFixture]
-    public class DoNotInvokeRhinoMocksVerifyAllExpectationWithoutSettingExpectations
+    public class DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget
     {
         private IBar _barMock = MockRepository.GenerateMock<IBar>();
+        private IBar _fooMock = MockRepository.GenerateMock<IBar>();
+
+
+
         [Test]
-        public void TestMethodWhereVerifyAllExpectationsOnAMockAndNoExectationsAreSet()
+        public void TestMethodWhereVerifyAllExpectationsOnAMockIsInvokedAndAnExpectationIsSet()
         {
             _barMock.Expect(x => x.DoSomethingBarRelated());
 
             _barMock.VerifyAllExpectations();
+        }
+
+
+        [Test]
+        public void TestMethodWhereVerifyAllExpectationsOnAMockIsInvokedAndExpectationsAreNotSet()
+        {
+            _barMock.VerifyAllExpectations();
+        }
+
+
+        [Test]
+        public void TestMethodWhereVerifyAllExpectationsIsInvokedOnTwoMocksButOneExpectationIsSet()
+        {
+            _barMock.Expect(x => x.DoSomethingBarRelated());
+
+            _barMock.VerifyAllExpectations();
+            _fooMock.VerifyAllExpectations();
         }
     }
 }

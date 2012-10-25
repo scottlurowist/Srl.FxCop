@@ -52,6 +52,12 @@ namespace Srl.FxCop.CustomDeveloperTestRules.Helpers
             /*IList<CustomInstruction> setupMethodInstructions,*/
             IList<CustomInstruction> testMethodInstructions)
         {
+            if (methodName == "TestMethodWhereVerifyAllExpectationsIsInvokedOnTwoMocksButOneExpectationIsSet")
+            {
+                Srl.FxCop.CustomRuleSdk.DevTools.Instructions.WriteInstructionListForMethodToTextFile(testMethodInstructions,
+                    @"c:\users\ex6m1sk\desktop\instructions.txt");
+            }
+
             IList<CustomProblem> problemsFound = new List<CustomProblem>();
 
             IList<string> mockOrStubsInvokingExpectList = new List<string>();
@@ -60,12 +66,42 @@ namespace Srl.FxCop.CustomDeveloperTestRules.Helpers
 
             foreach (var customInstruction in testMethodInstructions)
             {
-                if (customInstruction.OpCode == OpCode.Ldfld &&
-                    testMethodInstructions[instructionCounter + 1].OpCode == OpCode.Call &&
-                    testMethodInstructions[instructionCounter + 1].Value.ToString().Contains("Rhino.Mocks.RhinoMocksExtensions.Expect"))
+                if (customInstruction.OpCode == OpCode.Call &&
+                    customInstruction.Value.ToString().Contains("Rhino.Mocks.RhinoMocksExtensions.Expect"))
                 {
-                    mockOrStubsInvokingExpectList.Add(testMethodInstructions[instructionCounter + 1]
-                        .Value.ToString().Split('.').Last().TrimEnd('}'));
+                    // The Expect method is an extension method. So, the first argument to the Call opcode
+                    // will be the mock or stub instance. The second arg will the be the method to call
+                    // on the mock or stub. This appears as a lamda expression in the original source code.
+                    // Let us find these arguments in our set of customInstruction.
+                    int expectCallOffset = customInstruction.Offset;
+
+                    // The previous instruction should be our lamda expresion.
+                    int lamdaExpressionOffset = testMethodInstructions[instructionCounter - 1].Offset;
+
+                    // Find the branch instruction that branched to lamdaExpressionOffset. That branch
+                    // instruction checks that the delegate that represents the lamda expression does
+                    // indeed exist. Value on the instruction object will be the offset.
+                    int count = 0;
+
+                    var testMethodInstructionsCopy = testMethodInstructions.ToArray();
+
+                    foreach (var instruction in testMethodInstructionsCopy)
+                    {
+                        if (instruction.OpCode == OpCode.Brtrue_S &&
+                            instruction.Value.ToString() == Convert.ToString(lamdaExpressionOffset))
+                        {
+                            // The previous instruction will load the lamda expression onto the VES.
+                            // The instruction before that will load the mock or stub onto the VES.
+                            string mockOrStubName =
+                                testMethodInstructionsCopy[count - 2].Value.ToString().Split('.').Last().TrimEnd('}');
+
+                            mockOrStubsInvokingExpectList.Add(mockOrStubName);
+
+                            break;
+                        }
+
+                        count++;
+                    }
                 }
 
                 // Ldfld will load a field and if the next instruction is a Call, then it will
@@ -80,35 +116,11 @@ namespace Srl.FxCop.CustomDeveloperTestRules.Helpers
                     if (!mockOrStubsInvokingExpectList.Contains(fieldName))
                     {
                         CustomProblem problem = new CustomProblem();
-                        problem.ResolutionName = "";
+                        problem.ResolutionName = "VerifyAllExpectationsWithoutExpect";
                         problem.ResolutionArguments = new string[] { methodName, fieldName };
 
                         problemsFound.Add(problem);                        
                     }
-
-                    //foreach (var setupMethodInstruction in setupMethodInstructions)
-                    //{
-                    //    if (setupMethodInstruction.OpCode == OpCode.Call &&
-                    //        setupMethodInstruction.Value.ToString().Contains("GenerateStub"))
-                    //    {
-                    //        // The next instructions MUST BE a stfld to store the new
-                    //        // stub in the field.
-                    //        var nextInstruction = setupMethodInstructions[setupInstructionCounter + 1];
-
-                    //        if (nextInstruction.Value.ToString().Contains(fieldName))
-                    //        {
-                    //            CustomProblem problem = new CustomProblem();
-                    //            problem.ResolutionName = "VerifyAllOnStub";
-                    //            problem.ResolutionArguments = new string[] {methodName, fieldName};
-
-                    //            problemsFound.Add(problem);
-
-                    //            break;
-                    //        }
-                    //    }
-
-                    //    setupInstructionCounter++;
-                    //}
                 }
 
                 instructionCounter++;

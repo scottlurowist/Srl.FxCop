@@ -16,9 +16,7 @@
 
 #region Using Directives
 
-using System.Collections.Generic;
 using Microsoft.FxCop.Sdk;
-using Srl.FxCop.CustomRuleSdk;
 
 #endregion
 

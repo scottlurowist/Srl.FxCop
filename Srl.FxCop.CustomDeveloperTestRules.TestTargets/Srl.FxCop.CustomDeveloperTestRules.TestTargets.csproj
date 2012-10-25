@@ -86,7 +86,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DoNotInvokeRhinoMocksVerifyAllExpectationWithoutSettingExpectations.cs" />
+    <Compile Include="DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.cs" />
     <Compile Include="TODO\AvoidLogicInTestMethodsTarget.cs" />
     <Compile Include="DoNotConfuseRhinoMocksStubsWithMocksTarget.cs" />
     <Compile Include="TODO\DoNotUseMoreThanOneMockPerTestTarget.cs" />

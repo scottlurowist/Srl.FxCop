@@ -23,7 +23,7 @@
     <MessageLevel Certainty="99">Error</MessageLevel>
     <Name>Do Not Invoke RhinoMocks VerifyAllExpectation Without Setting Expectations</Name>
     <Owner>Scott Lurowist</Owner>
-    <Resolution>Do not invoke Rhino Mocks 'VerifyAllExpectations' in method '{0}' for instance variable '{1}' when no expectations have been set.</Resolution>
+    <Resolution Name="VerifyAllExpectationsWithoutExpect">Do not invoke Rhino Mocks 'VerifyAllExpectations' in method '{0}' for instance variable '{1}' when no expectations have been set.</Resolution>
     <Url></Url>
   </Rule>
   
