@@ -128,6 +128,35 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
         }
 
 
+        [Test]
+        public void CanRaiseTwoProblemsWhenVerifyAllExpectationsIsInvokedOnTwoMocksAndNoExpectationsAreSet()
+        {
+            // Arrange
+            IList<CustomInstruction> instructionsForMethod =
+                GetInstructionsForCanRaiseTwoProblemsWhenVerifyAllExpectationsIsInvokedOnTwoMocksAndNoExpectationsAreSet();
+
+            var helper = new Helpers.DoNotInvokeRhinoMocksVerifyAllExpectationWithoutSettingExpectations();
+
+            const string testMethodBeingAnalyzed =
+                "TestMethodWhereVerifyAllExpectationsIsInvokedOnTwoMocksButNoExpectationsAreSet";
+
+
+            // Act
+            IList<CustomProblem> problemsFound = helper.
+                CheckIfRhinoMocksVerifyAllExpectationsIsInvokedAndNoExpecationsAreSet(
+                    testMethodBeingAnalyzed,
+                    instructionsForMethod);
+
+
+            // Assert
+            const int expectedNumberOfProblemsFound = 2;
+            const string expectedResolutionNameInXmlMetadataFile = "VerifyAllExpectationsWithoutExpect";
+
+            Assert.That(problemsFound.Count, Is.EqualTo(expectedNumberOfProblemsFound));
+            Assert.That(problemsFound[0].ResolutionName, Is.EqualTo(expectedResolutionNameInXmlMetadataFile));
+        }
+
+
 
 
         #region Private Instance Helper Methods
@@ -381,7 +410,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
 
 
         /// <summary>
-        /// Gets the instructions for the test CannotRaiseProblemWhenVerifyAllExpectationsIsInvokedAndAnExpectationIsSet.
+        /// Gets the instructions for the test CanRaiseProblemWhenVerifyAllExpectationsIsInvokedOnTwoMocksAndOneExpectationIsSet.
         /// </summary>
         /// <returns>
         /// A list of instructions that was empirically obtained from
@@ -577,6 +606,115 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             // CIL Instruction 23.
             instruction = new CustomInstruction();
             instruction.Offset = 68;
+            instruction.OpCode = OpCode.Ret;
+            instruction.Value = null;
+
+            instructionList.Add(instruction);
+
+            return instructionList;
+        }
+
+
+        /// <summary>
+        /// Gets the instructions for the test CanRaiseTwoProblemsWhenVerifyAllExpectationsIsInvokedOnTwoMocksAndNoExpectationsAreSet.
+        /// </summary>
+        /// <returns>
+        /// A list of instructions that was empirically obtained from
+        /// DoNotInvokeRhinoMocksVerifyAllExpectationWithoutSettingExpectationsTarget.cs
+        /// </returns>
+        IList<CustomInstruction> GetInstructionsForCanRaiseTwoProblemsWhenVerifyAllExpectationsIsInvokedOnTwoMocksAndNoExpectationsAreSet()
+        {
+            IList<CustomInstruction> instructionList = new List<CustomInstruction>();
+
+            // CIL Instruction 1.
+            CustomInstruction instruction = new CustomInstruction();
+            instruction.Offset = 0;
+            instruction.OpCode = OpCode._Locals;
+            instruction.Value = "{Microsoft.FxCop.Sdk.LocalCollection}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 2.
+            instruction = new CustomInstruction();
+            instruction.Offset = 0;
+            instruction.OpCode = OpCode.Nop;
+            instruction.Value = null;
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 3.
+            instruction = new CustomInstruction();
+            instruction.Offset = 1;
+            instruction.OpCode = OpCode.Ldarg_0;
+            instruction.Value =
+                "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 4.
+            instruction = new CustomInstruction();
+            instruction.Offset = 2;
+            instruction.OpCode = OpCode.Ldfld;
+            instruction.Value =
+                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 5.
+            instruction = new CustomInstruction();
+            instruction.Offset = 7;
+            instruction.OpCode = OpCode.Call;
+            instruction.Value =
+                "{Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 6.
+            instruction = new CustomInstruction();
+            instruction.Offset = 12;
+            instruction.OpCode = OpCode.Nop;
+            instruction.Value = null;
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 7.
+            instruction = new CustomInstruction();
+            instruction.Offset = 13;
+            instruction.OpCode = OpCode.Ldarg_0;
+            instruction.Value =
+                "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 8.
+            instruction = new CustomInstruction();
+            instruction.Offset = 14;
+            instruction.OpCode = OpCode.Ldfld;
+            instruction.Value = 
+                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._fooMock}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 9.
+            instruction = new CustomInstruction();
+            instruction.Offset = 19;
+            instruction.OpCode = OpCode.Call;
+            instruction.Value =
+                "{Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations}";
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 10.
+            instruction = new CustomInstruction();
+            instruction.Offset = 24;
+            instruction.OpCode = OpCode.Nop;
+            instruction.Value = null;
+
+            instructionList.Add(instruction);
+
+            // CIL Instruction 11.
+            instruction = new CustomInstruction();
+            instruction.Offset = 25;
             instruction.OpCode = OpCode.Ret;
             instruction.Value = null;
 

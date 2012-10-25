@@ -52,7 +52,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.Helpers
             /*IList<CustomInstruction> setupMethodInstructions,*/
             IList<CustomInstruction> testMethodInstructions)
         {
-            if (methodName == "TestMethodWhereVerifyAllExpectationsIsInvokedOnTwoMocksButOneExpectationIsSet")
+            if (methodName == "TestMethodWhereVerifyAllExpectationsIsInvokedOnTwoMocksButNoExpectationsAreSet")
             {
                 Srl.FxCop.CustomRuleSdk.DevTools.Instructions.WriteInstructionListForMethodToTextFile(testMethodInstructions,
                     @"c:\users\ex6m1sk\desktop\instructions.txt");

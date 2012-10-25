@@ -62,5 +62,13 @@ namespace Srl.FxCop.CustomDeveloperTestRules.TestTargets
             _barMock.VerifyAllExpectations();
             _fooMock.VerifyAllExpectations();
         }
+
+
+        [Test]
+        public void TestMethodWhereVerifyAllExpectationsIsInvokedOnTwoMocksButNoExpectationsAreSet()
+        {
+            _barMock.VerifyAllExpectations();
+            _fooMock.VerifyAllExpectations();
+        }
     }
 }
