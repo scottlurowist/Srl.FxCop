@@ -89,6 +89,7 @@
     <Compile Include="CustomProblem.cs" />
     <Compile Include="CustomField.cs" />
     <Compile Include="CustomInstruction.cs" />
+    <Compile Include="DevTools\Instructions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
