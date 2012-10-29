@@ -177,9 +177,12 @@ namespace Srl.FxCop.CustomDeveloperTestRules.Helpers
             IList<CustomInstruction> setupMethodInstructions,
             IList<CustomInstruction> testMethodInstructions)
         {
+            if (methodName == "CanGetClaimCaseLinesByClaimVersionIdSystem")
+            {
+                Srl.FxCop.CustomRuleSdk.DevTools.Instructions.WriteInstructionListForMethodToTextFile(testMethodInstructions,
+                    @"c:\users\ex6m1sk\desktop\instructions.txt");
+            }
             IList<CustomProblem> problemsFound = new List<CustomProblem>();
-
-            int instructionCounter = 0;
 
             foreach (var customInstruction in testMethodInstructions)
             {
@@ -188,62 +191,40 @@ namespace Srl.FxCop.CustomDeveloperTestRules.Helpers
                 if (customInstruction.OpCode == OpCode.Call && 
                     customInstruction.Value.ToString().Contains("Rhino.Mocks.RhinoMocksExtensions.Expect"))
                 {
-                    // The Expect method is an extension method. So, the first argument to the Call opcode
-                    // will be the mock or stub instance. The second arg will the be the method to call
-                    // on the mock or stub. This appears as a lamda expression in the original source code.
-                    // Let us find these arguments in our set of customInstruction.
-                    int expectCallOffset = customInstruction.Offset;
-                    
-                    // The previous instruction should be our lamda expresion.
-                    int lamdaExpressionOFfset = testMethodInstructions[instructionCounter - 1].Offset;
+                    CustomInstruction extensionMethodTargetInstruction = 
+                        CommonHelpers.GetInstructionThatLoadsTheTargetOfAnExtensionMethodWithLamda(customInstruction,
+                                                                                                   testMethodInstructions);
 
-                    // Find the branch instruction that branched to lamdaExpressionOffset. That branch
-                    // instruction checks that the delegate that represents the lamda expression does
-                    // indeed exist. Value on the instruction object will be the offset.
-                    int count = 0;
 
-                    foreach (var testMethodInstruction in testMethodInstructions)
+                    string mockOrStubName =
+                        CommonHelpers.GetVariableNameFromInstructionValue(extensionMethodTargetInstruction);
+
+                    int setupInstructionCounter = 0;
+
+                    foreach (var setupMethodInstruction in setupMethodInstructions)
                     {
-                        if (testMethodInstruction.OpCode == OpCode.Brtrue_S &&
-                            testMethodInstruction.Value.ToString() == Convert.ToString(lamdaExpressionOFfset))
+                        if (setupMethodInstruction.OpCode == OpCode.Call &&
+                            setupMethodInstruction.Value.ToString().Contains("GenerateStub"))
                         {
-                            // The previous instruction will load the lamda expression onto the VES.
-                            // The instruction before that will load the mock or stub onto the VES.
-                            string mockOrStubName =
-                                testMethodInstructions[count - 2].Value.ToString().Split('.').Last().TrimEnd('}');
+                            // The next instructions MUST BE a stfld to store the new
+                            // stub in the field.
+                            var nextInstruction = setupMethodInstructions[setupInstructionCounter + 1];
 
-                            int setupInstructionCounter = 0;
-
-                            foreach (var setupMethodInstruction in setupMethodInstructions)
+                            if (nextInstruction.Value.ToString().Contains(mockOrStubName))
                             {
-                                if (setupMethodInstruction.OpCode == OpCode.Call &&
-                                    setupMethodInstruction.Value.ToString().Contains("GenerateStub"))
-                                {
-                                    // The next instructions MUST BE a stfld to store the new
-                                    // stub in the field.
-                                    var nextInstruction = setupMethodInstructions[setupInstructionCounter + 1];
+                                CustomProblem problem = new CustomProblem();
+                                problem.ResolutionName = "ExpectOnStub";
+                                problem.ResolutionArguments = new string[] { methodName, mockOrStubName };
 
-                                    if (nextInstruction.Value.ToString().Contains(mockOrStubName))
-                                    {
-                                        CustomProblem problem = new CustomProblem();
-                                        problem.ResolutionName = "ExpectOnStub";
-                                        problem.ResolutionArguments = new string[] { methodName, mockOrStubName };
+                                problemsFound.Add(problem);
 
-                                        problemsFound.Add(problem);
-
-                                        break;
-                                    }
-                                }
-
-                                setupInstructionCounter++;
+                                break;
                             }
                         }
 
-                        count++;
+                        setupInstructionCounter++;
                     }
                 }
-
-                instructionCounter++;
             }
 
             return problemsFound;
