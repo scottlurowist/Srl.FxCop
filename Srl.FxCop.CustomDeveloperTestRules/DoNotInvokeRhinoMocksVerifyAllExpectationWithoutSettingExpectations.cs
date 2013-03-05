@@ -67,6 +67,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules
             if ((methodCandidate != null) && 
                 DoesMethodHaveAnAttribute(methodCandidate, DeveloperTestConstants.TestAttributeName))
             {
+                if (methodCandidate.Name.Name != "TestMonitorBatchTimeoutException") return Problems;
                 var helper = new Helpers.DoNotInvokeRhinoMocksVerifyAllExpectationWithoutSettingExpectations();
 
                 ProcessFoundProblems(helper.CheckIfRhinoMocksVerifyAllExpectationsIsInvokedAndNoExpecationsAreSet(

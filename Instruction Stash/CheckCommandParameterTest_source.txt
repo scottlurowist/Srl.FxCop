@@ -1,0 +1,40 @@
+       /// <summary>
+        /// To Check Command Parameter
+        /// </summary>
+        [Test]
+        public void CheckCommandParameterTest()
+        {
+            bool bDirectoryCreated = false;
+            string projectPath = System.IO.Path.GetTempPath();
+            string[] args = { "Framework", _oraCredentials, "someUnknownCommand" };
+
+            var path = Path.Combine(projectPath, args[0]);
+            var settings = new Settings() { DbBuildProjectDir = projectPath };
+
+            try
+            {
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                    bDirectoryCreated = true;
+                }
+
+                var outM = new OutputManager();
+                var dbMock = MockRepository.GenerateMock<IDbOperations>();
+
+                dbMock.Expect(d => d.CheckConnection(args[1])).Return(new ReturnArgs() {Success = true});
+
+                ArgumentsValidator validator = new ArgumentsValidator(settings, args, outM, dbMock);
+                ReturnArgs ra = validator.CheckParametersFromArgList();
+
+ 
+                dbMock.VerifyAllExpectations();
+                Assert.That(ra.Success, Is.EqualTo(false));
+                Assert.That(ra.Message, Is.EqualTo(string.Format(outM.GetResourceString(Resources.ArgumentsCommandError), args[2])));
+            }
+            finally
+            {
+                if (bDirectoryCreated)
+                    Directory.Delete(path);
+            }
+        }

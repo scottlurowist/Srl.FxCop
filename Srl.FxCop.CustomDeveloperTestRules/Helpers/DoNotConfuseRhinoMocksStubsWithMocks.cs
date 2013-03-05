@@ -177,11 +177,16 @@ namespace Srl.FxCop.CustomDeveloperTestRules.Helpers
             IList<CustomInstruction> setupMethodInstructions,
             IList<CustomInstruction> testMethodInstructions)
         {
-            if (methodName == "CanGetClaimCaseLinesByClaimVersionIdSystem")
+            // CanLoadClaimsPresenter
+            // TestMonitorBatchTimeoutException
+            if (methodName == "TestMonitorBatchTimeoutException")
             {
                 Srl.FxCop.CustomRuleSdk.DevTools.Instructions.WriteInstructionListForMethodToTextFile(testMethodInstructions,
-                    @"c:\users\ex6m1sk\desktop\instructions.txt");
+                    @"c:\users\ex6m1sk\desktop\TestMonitorBatchTimeoutException.txt");
+                Srl.FxCop.CustomRuleSdk.DevTools.Instructions.GenerateCSharpCodeFromInstructionListForUnitTests(testMethodInstructions,
+                    @"c:\users\ex6m1sk\desktop\TestMonitorBatchTimeoutException.cs.txt");
             }
+
             IList<CustomProblem> problemsFound = new List<CustomProblem>();
 
             foreach (var customInstruction in testMethodInstructions)
@@ -192,9 +197,8 @@ namespace Srl.FxCop.CustomDeveloperTestRules.Helpers
                     customInstruction.Value.ToString().Contains("Rhino.Mocks.RhinoMocksExtensions.Expect"))
                 {
                     CustomInstruction extensionMethodTargetInstruction = 
-                        CommonHelpers.GetInstructionThatLoadsTheTargetOfAnExtensionMethodWithLamda(customInstruction,
+                        CommonHelpers.GetInstructionThatLoadsTheTargetOfAnExtensionMethod(customInstruction,
                                                                                                    testMethodInstructions);
-
 
                     string mockOrStubName =
                         CommonHelpers.GetVariableNameFromInstructionValue(extensionMethodTargetInstruction);

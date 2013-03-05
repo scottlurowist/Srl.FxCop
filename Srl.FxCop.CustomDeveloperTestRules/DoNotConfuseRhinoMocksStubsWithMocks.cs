@@ -74,6 +74,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules
             if ((methodCandidate != null) && 
                 DoesMethodHaveAnAttribute(methodCandidate, DeveloperTestConstants.TestAttributeName))
             {
+                if (methodCandidate.Name.Name != "TestMonitorBatchTimeoutException") return Problems;
                 // Get the setup instructions only once for this Check invocation, and use it 
                 // for all resolutions.
                 IList<CustomInstruction> setupMethodInstructions = 

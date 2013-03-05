@@ -1,0 +1,7 @@
+0 - Opcode = _Locals    Offset = 0     Value = {Microsoft.FxCop.Sdk.LocalCollection}                                                               
+1 - Opcode = Nop        Offset = 0     Value = null                                                                                                
+2 - Opcode = Ldarg_0    Offset = 1     Value = {Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}
+3 - Opcode = Ldfld      Offset = 2     Value = {Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}
+4 - Opcode = Call       Offset = 7     Value = {Signature = Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations(System.Object) IsReturnTypeVoid = True IsStatic = True NumberOfParameters = 1}
+5 - Opcode = Nop        Offset = 12    Value = null                                                                                                
+6 - Opcode = Ret        Offset = 13    Value = null                                                                                                

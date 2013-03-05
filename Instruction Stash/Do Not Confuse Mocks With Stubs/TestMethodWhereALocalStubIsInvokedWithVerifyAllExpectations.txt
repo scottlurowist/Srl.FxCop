@@ -1,0 +1,10 @@
+0 - Opcode = _Locals    Offset = 0     Value = {Microsoft.FxCop.Sdk.LocalCollection}                                                               
+1 - Opcode = Nop        Offset = 0     Value = null                                                                                                
+2 - Opcode = Ldc_I4_0   Offset = 1     Value = {0}                                                                                                 
+3 - Opcode = Newarr     Offset = 2     Value = {Microsoft.FxCop.Sdk.ClassNode:System.Object}                                                       
+4 - Opcode = Call       Offset = 7     Value = {Signature = Rhino.Mocks.MockRepository.GenerateStub<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>(System.Object[]) IsReturnTypeVoid = False IsStatic = True NumberOfParameters = 1}
+5 - Opcode = Stloc_0    Offset = 12    Value = {Name = localStub}                                                                                  
+6 - Opcode = Ldloc_0    Offset = 13    Value = {Name = localStub}                                                                                  
+7 - Opcode = Call       Offset = 14    Value = {Signature = Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations(System.Object) IsReturnTypeVoid = True IsStatic = True NumberOfParameters = 1}
+8 - Opcode = Nop        Offset = 19    Value = null                                                                                                
+9 - Opcode = Ret        Offset = 20    Value = null                                                                                                

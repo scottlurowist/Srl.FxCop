@@ -1,0 +1,67 @@
+       
+
+
+
+
+	[SetUp]
+        public void Setup()
+        {
+            _claimSetDao = MockRepository.GenerateMock<IClaimSetDao>();
+            _batchDao = MockRepository.GenerateMock<IBatchDao>();
+        }
+
+        
+
+
+	[Test]
+        [TestCase(0, true, true)]
+        [TestCase(0, false, false)]
+        [TestCase(0, false, true)]
+        [TestCase(0, true, false)]
+        [TestCase(1, false, false)]
+        [TestCase(1, false, true)]
+        [ExpectedException(typeof(ProviderException))]
+        public void TestMonitorBatchTimeoutException(int timeOutMinutes, bool isBatchTrue, bool isClaimSetTrue)
+        {
+            Batch batch = new Batch
+            {
+                DateCreated = new DateTime(2009, 12, 23),
+                ArchivedDate = new DateTime(2009, 1, 01),
+                ArchivedFlag = "N",
+                Checksum = "12345",
+                Filename = "c:\abc\abc.txt",
+                HostName = "temp",
+                NumClaimSetSubmitted = 200,
+                OriginalFilename = "c:\temp\temp.txt"
+            };
+
+            var claimSet = new ClaimSet
+            {
+                DateCreated = new DateTime(2009, 12, 23),
+                Workflow = "ABC",
+                Batch = batch,
+                CustomerTransactionId = "123434343323"
+            };
+
+            List<ClaimSet> claimSetList = new List<ClaimSet>();
+            claimSetList.Add(claimSet);
+            var batchMonitorProvider = new BatchMonitorProvider(_claimSetDao, _batchDao, timeOutMinutes, 0);
+
+            var serviceHostStub = MockRepository.GenerateStub<NonWcfServiceHost>();
+            serviceHostStub.StopRequested = false;
+            batchMonitorProvider.ServiceHost = serviceHostStub;
+
+            if (isClaimSetTrue)
+                _claimSetDao.Expect(u => u.GetByCriteria(Arg<List<ICriterion>>.Is.Anything)).Return(claimSetList);
+            else
+                _claimSetDao.Expect(u => u.GetByCriteria(Arg<List<ICriterion>>.Is.Anything)).Return(null);
+
+            if (isBatchTrue)
+                _batchDao.Expect(u => u.GetById(Arg<long>.Is.Anything)).Return(batch);
+            else
+                _batchDao.Expect(u => u.GetById(Arg<long>.Is.Anything)).Return(null);
+
+            _batchDao.Expect(u => u.Update(Arg<Batch>.Is.Anything)).Return(batch);
+            var ret = batchMonitorProvider.MonitorBatch(1, 100);
+            Assert.AreEqual(ret, false);
+        }

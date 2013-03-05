@@ -1,0 +1,977 @@
+IList<CustomInstruction> instructionList = new List<CustomInstruction>();
+
+CustomInstruction instruction;
+CustomMethod meth;
+CustomLocal custLocal;
+
+// CIL Instruction 1.
+instruction = new CustomInstruction();
+instruction.Offset = 0;
+instruction.OpCode = OpCode._Locals;
+instruction.Value = "{Microsoft.FxCop.Sdk.LocalCollection}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 2.
+instruction = new CustomInstruction();
+instruction.Offset = 0;
+instruction.OpCode = OpCode.Ldnull;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 3.
+instruction = new CustomInstruction();
+instruction.Offset = 1;
+instruction.OpCode = OpCode.Stloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$<>9__CachedAnonymousMethodDelegate5";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 4.
+instruction = new CustomInstruction();
+instruction.Offset = 8;
+instruction.OpCode = OpCode.Stloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$<>8__locals7";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 5.
+instruction = new CustomInstruction();
+instruction.Offset = 10;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 6.
+instruction = new CustomInstruction();
+instruction.Offset = 11;
+instruction.OpCode = OpCode.Ldc_I4_0;
+instruction.Value = 0;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 7.
+instruction = new CustomInstruction();
+instruction.Offset = 12;
+instruction.OpCode = OpCode.Stloc_0;
+custLocal = new CustomLocal();
+custLocal.Name = "bDirectoryCreated";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 8.
+instruction = new CustomInstruction();
+instruction.Offset = 18;
+instruction.OpCode = OpCode.Stloc_1;
+custLocal = new CustomLocal();
+custLocal.Name = "projectPath";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 9.
+instruction = new CustomInstruction();
+instruction.Offset = 19;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$<>8__locals7";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 10.
+instruction = new CustomInstruction();
+instruction.Offset = 21;
+instruction.OpCode = OpCode.Ldc_I4_3;
+instruction.Value = 3;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 11.
+instruction = new CustomInstruction();
+instruction.Offset = 27;
+instruction.OpCode = OpCode.Stloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$0$0000";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 12.
+instruction = new CustomInstruction();
+instruction.Offset = 29;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$0$0000";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 13.
+instruction = new CustomInstruction();
+instruction.Offset = 31;
+instruction.OpCode = OpCode.Ldc_I4_0;
+instruction.Value = 0;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 14.
+instruction = new CustomInstruction();
+instruction.Offset = 32;
+instruction.OpCode = OpCode.Ldstr;
+instruction.Value = "{Framework}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 15.
+instruction = new CustomInstruction();
+instruction.Offset = 37;
+instruction.OpCode = OpCode.Stelem_Ref;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 16.
+instruction = new CustomInstruction();
+instruction.Offset = 38;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$0$0000";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 17.
+instruction = new CustomInstruction();
+instruction.Offset = 40;
+instruction.OpCode = OpCode.Ldc_I4_1;
+instruction.Value = 1;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 18.
+instruction = new CustomInstruction();
+instruction.Offset = 41;
+instruction.OpCode = OpCode.Ldarg_0;
+instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:McKesson.TPP.Tools.DBBuild.Test.Console.ArgumentsValidatorTest this}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 19.
+instruction = new CustomInstruction();
+instruction.Offset = 42;
+instruction.OpCode = OpCode.Ldfld;
+instruction.Value = "{McKesson.TPP.Tools.DBBuild.Test.Console.ArgumentsValidatorTest._oraCredentials}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 20.
+instruction = new CustomInstruction();
+instruction.Offset = 47;
+instruction.OpCode = OpCode.Stelem_Ref;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 21.
+instruction = new CustomInstruction();
+instruction.Offset = 48;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$0$0000";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 22.
+instruction = new CustomInstruction();
+instruction.Offset = 50;
+instruction.OpCode = OpCode.Ldc_I4_2;
+instruction.Value = 2;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 23.
+instruction = new CustomInstruction();
+instruction.Offset = 51;
+instruction.OpCode = OpCode.Ldstr;
+instruction.Value = "{someUnknownCommand}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 24.
+instruction = new CustomInstruction();
+instruction.Offset = 56;
+instruction.OpCode = OpCode.Stelem_Ref;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 25.
+instruction = new CustomInstruction();
+instruction.Offset = 57;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$0$0000";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 26.
+instruction = new CustomInstruction();
+instruction.Offset = 59;
+instruction.OpCode = OpCode.Stfld;
+instruction.Value = "{McKesson.TPP.Tools.DBBuild.Test.Console.ArgumentsValidatorTest+<>c__DisplayClass6.args}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 27.
+instruction = new CustomInstruction();
+instruction.Offset = 64;
+instruction.OpCode = OpCode.Ldloc_1;
+custLocal = new CustomLocal();
+custLocal.Name = "projectPath";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 28.
+instruction = new CustomInstruction();
+instruction.Offset = 65;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$<>8__locals7";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 29.
+instruction = new CustomInstruction();
+instruction.Offset = 67;
+instruction.OpCode = OpCode.Ldfld;
+instruction.Value = "{McKesson.TPP.Tools.DBBuild.Test.Console.ArgumentsValidatorTest+<>c__DisplayClass6.args}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 30.
+instruction = new CustomInstruction();
+instruction.Offset = 72;
+instruction.OpCode = OpCode.Ldc_I4_0;
+instruction.Value = 0;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 31.
+instruction = new CustomInstruction();
+instruction.Offset = 73;
+instruction.OpCode = OpCode.Ldelem_Ref;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 32.
+instruction = new CustomInstruction();
+instruction.Offset = 79;
+instruction.OpCode = OpCode.Stloc_2;
+custLocal = new CustomLocal();
+custLocal.Name = "path";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 33.
+instruction = new CustomInstruction();
+instruction.Offset = 85;
+instruction.OpCode = OpCode.Stloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "<>g__initLocal2";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 34.
+instruction = new CustomInstruction();
+instruction.Offset = 87;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "<>g__initLocal2";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 35.
+instruction = new CustomInstruction();
+instruction.Offset = 89;
+instruction.OpCode = OpCode.Ldloc_1;
+custLocal = new CustomLocal();
+custLocal.Name = "projectPath";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 36.
+instruction = new CustomInstruction();
+instruction.Offset = 95;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 37.
+instruction = new CustomInstruction();
+instruction.Offset = 96;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "<>g__initLocal2";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 38.
+instruction = new CustomInstruction();
+instruction.Offset = 98;
+instruction.OpCode = OpCode.Stloc_3;
+custLocal = new CustomLocal();
+custLocal.Name = "settings";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 39.
+instruction = new CustomInstruction();
+instruction.Offset = 99;
+instruction.OpCode = OpCode._Try;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 40.
+instruction = new CustomInstruction();
+instruction.Offset = 99;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 41.
+instruction = new CustomInstruction();
+instruction.Offset = 100;
+instruction.OpCode = OpCode.Ldloc_2;
+custLocal = new CustomLocal();
+custLocal.Name = "path";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 42.
+instruction = new CustomInstruction();
+instruction.Offset = 106;
+instruction.OpCode = OpCode.Stloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$4$0001";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 43.
+instruction = new CustomInstruction();
+instruction.Offset = 108;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$4$0001";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 44.
+instruction = new CustomInstruction();
+instruction.Offset = 110;
+instruction.OpCode = OpCode.Brtrue_S;
+instruction.Value = 123;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 45.
+instruction = new CustomInstruction();
+instruction.Offset = 112;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 46.
+instruction = new CustomInstruction();
+instruction.Offset = 113;
+instruction.OpCode = OpCode.Ldloc_2;
+custLocal = new CustomLocal();
+custLocal.Name = "path";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 47.
+instruction = new CustomInstruction();
+instruction.Offset = 119;
+instruction.OpCode = OpCode.Pop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 48.
+instruction = new CustomInstruction();
+instruction.Offset = 120;
+instruction.OpCode = OpCode.Ldc_I4_1;
+instruction.Value = 1;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 49.
+instruction = new CustomInstruction();
+instruction.Offset = 121;
+instruction.OpCode = OpCode.Stloc_0;
+custLocal = new CustomLocal();
+custLocal.Name = "bDirectoryCreated";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 50.
+instruction = new CustomInstruction();
+instruction.Offset = 122;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 51.
+instruction = new CustomInstruction();
+instruction.Offset = 128;
+instruction.OpCode = OpCode.Stloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "outM";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 52.
+instruction = new CustomInstruction();
+instruction.Offset = 130;
+instruction.OpCode = OpCode.Ldc_I4_0;
+instruction.Value = 0;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 53.
+instruction = new CustomInstruction();
+instruction.Offset = 141;
+instruction.OpCode = OpCode.Stloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "dbMock";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 54.
+instruction = new CustomInstruction();
+instruction.Offset = 143;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "dbMock";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 55.
+instruction = new CustomInstruction();
+instruction.Offset = 145;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$<>9__CachedAnonymousMethodDelegate5";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 56.
+instruction = new CustomInstruction();
+instruction.Offset = 147;
+instruction.OpCode = OpCode.Brtrue_S;
+instruction.Value = 166;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 57.
+instruction = new CustomInstruction();
+instruction.Offset = 149;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$<>8__locals7";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 58.
+instruction = new CustomInstruction();
+instruction.Offset = 151;
+instruction.OpCode = OpCode.Ldftn;
+instruction.Value = "{McKesson.TPP.Tools.DBBuild.Test.Console.ArgumentsValidatorTest+<>c__DisplayClass6.<CheckCommandParameterTest>b__4}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 59.
+instruction = new CustomInstruction();
+instruction.Offset = 162;
+instruction.OpCode = OpCode.Stloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$<>9__CachedAnonymousMethodDelegate5";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 60.
+instruction = new CustomInstruction();
+instruction.Offset = 164;
+instruction.OpCode = OpCode.Br_S;
+instruction.Value = 166;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 61.
+instruction = new CustomInstruction();
+instruction.Offset = 166;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$<>9__CachedAnonymousMethodDelegate5";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 62.
+instruction = new CustomInstruction();
+instruction.Offset = 178;
+instruction.OpCode = OpCode.Stloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "<>g__initLocal3";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 63.
+instruction = new CustomInstruction();
+instruction.Offset = 180;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "<>g__initLocal3";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 64.
+instruction = new CustomInstruction();
+instruction.Offset = 182;
+instruction.OpCode = OpCode.Ldc_I4_1;
+instruction.Value = 1;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 65.
+instruction = new CustomInstruction();
+instruction.Offset = 188;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 66.
+instruction = new CustomInstruction();
+instruction.Offset = 189;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "<>g__initLocal3";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 67.
+instruction = new CustomInstruction();
+instruction.Offset = 196;
+instruction.OpCode = OpCode.Pop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 68.
+instruction = new CustomInstruction();
+instruction.Offset = 197;
+instruction.OpCode = OpCode.Ldloc_3;
+custLocal = new CustomLocal();
+custLocal.Name = "settings";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 69.
+instruction = new CustomInstruction();
+instruction.Offset = 198;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$<>8__locals7";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 70.
+instruction = new CustomInstruction();
+instruction.Offset = 200;
+instruction.OpCode = OpCode.Ldfld;
+instruction.Value = "{McKesson.TPP.Tools.DBBuild.Test.Console.ArgumentsValidatorTest+<>c__DisplayClass6.args}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 71.
+instruction = new CustomInstruction();
+instruction.Offset = 205;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "outM";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 72.
+instruction = new CustomInstruction();
+instruction.Offset = 207;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "dbMock";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 73.
+instruction = new CustomInstruction();
+instruction.Offset = 214;
+instruction.OpCode = OpCode.Stloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "validator";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 74.
+instruction = new CustomInstruction();
+instruction.Offset = 216;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "validator";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 75.
+instruction = new CustomInstruction();
+instruction.Offset = 223;
+instruction.OpCode = OpCode.Stloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "ra";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 76.
+instruction = new CustomInstruction();
+instruction.Offset = 225;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "dbMock";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 77.
+instruction = new CustomInstruction();
+instruction.Offset = 232;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 78.
+instruction = new CustomInstruction();
+instruction.Offset = 233;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "ra";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 79.
+instruction = new CustomInstruction();
+instruction.Offset = 240;
+instruction.OpCode = OpCode.Box;
+instruction.Value = "{Microsoft.FxCop.Sdk.Struct:System.Boolean}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 80.
+instruction = new CustomInstruction();
+instruction.Offset = 245;
+instruction.OpCode = OpCode.Ldc_I4_0;
+instruction.Value = 0;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 81.
+instruction = new CustomInstruction();
+instruction.Offset = 246;
+instruction.OpCode = OpCode.Box;
+instruction.Value = "{Microsoft.FxCop.Sdk.Struct:System.Boolean}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 82.
+instruction = new CustomInstruction();
+instruction.Offset = 261;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 83.
+instruction = new CustomInstruction();
+instruction.Offset = 262;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "ra";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 84.
+instruction = new CustomInstruction();
+instruction.Offset = 269;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "outM";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 85.
+instruction = new CustomInstruction();
+instruction.Offset = 271;
+instruction.OpCode = OpCode.Ldstr;
+instruction.Value = "{ArgumentsError_Command}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 86.
+instruction = new CustomInstruction();
+instruction.Offset = 281;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$<>8__locals7";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 87.
+instruction = new CustomInstruction();
+instruction.Offset = 283;
+instruction.OpCode = OpCode.Ldfld;
+instruction.Value = "{McKesson.TPP.Tools.DBBuild.Test.Console.ArgumentsValidatorTest+<>c__DisplayClass6.args}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 88.
+instruction = new CustomInstruction();
+instruction.Offset = 288;
+instruction.OpCode = OpCode.Ldc_I4_2;
+instruction.Value = 2;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 89.
+instruction = new CustomInstruction();
+instruction.Offset = 289;
+instruction.OpCode = OpCode.Ldelem_Ref;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 90.
+instruction = new CustomInstruction();
+instruction.Offset = 305;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 91.
+instruction = new CustomInstruction();
+instruction.Offset = 306;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 92.
+instruction = new CustomInstruction();
+instruction.Offset = 307;
+instruction.OpCode = OpCode.Leave_S;
+instruction.Value = 329;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 93.
+instruction = new CustomInstruction();
+instruction.Offset = 309;
+instruction.OpCode = OpCode._EndTry;
+instruction.Value = "{Instruction OpCode=_Try}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 94.
+instruction = new CustomInstruction();
+instruction.Offset = 309;
+instruction.OpCode = OpCode._Finally;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 95.
+instruction = new CustomInstruction();
+instruction.Offset = 309;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 96.
+instruction = new CustomInstruction();
+instruction.Offset = 310;
+instruction.OpCode = OpCode.Ldloc_0;
+custLocal = new CustomLocal();
+custLocal.Name = "bDirectoryCreated";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 97.
+instruction = new CustomInstruction();
+instruction.Offset = 311;
+instruction.OpCode = OpCode.Ldc_I4_0;
+instruction.Value = 0;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 98.
+instruction = new CustomInstruction();
+instruction.Offset = 312;
+instruction.OpCode = OpCode.Ceq;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 99.
+instruction = new CustomInstruction();
+instruction.Offset = 314;
+instruction.OpCode = OpCode.Stloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$4$0001";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 100.
+instruction = new CustomInstruction();
+instruction.Offset = 316;
+instruction.OpCode = OpCode.Ldloc_S;
+custLocal = new CustomLocal();
+custLocal.Name = "CS$4$0001";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 101.
+instruction = new CustomInstruction();
+instruction.Offset = 318;
+instruction.OpCode = OpCode.Brtrue_S;
+instruction.Value = 327;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 102.
+instruction = new CustomInstruction();
+instruction.Offset = 320;
+instruction.OpCode = OpCode.Ldloc_2;
+custLocal = new CustomLocal();
+custLocal.Name = "path";
+instruction.Value = custLocal;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 103.
+instruction = new CustomInstruction();
+instruction.Offset = 326;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 104.
+instruction = new CustomInstruction();
+instruction.Offset = 327;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 105.
+instruction = new CustomInstruction();
+instruction.Offset = 328;
+instruction.OpCode = OpCode.Endfinally;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 106.
+instruction = new CustomInstruction();
+instruction.Offset = 329;
+instruction.OpCode = OpCode._EndHandler;
+instruction.Value = "{Instruction OpCode=_Finally}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 107.
+instruction = new CustomInstruction();
+instruction.Offset = 329;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 108.
+instruction = new CustomInstruction();
+instruction.Offset = 330;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 109.
+instruction = new CustomInstruction();
+instruction.Offset = 331;
+instruction.OpCode = OpCode.Ret;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+return instructionList;

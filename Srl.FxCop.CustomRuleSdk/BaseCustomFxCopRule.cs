@@ -130,16 +130,63 @@ namespace Srl.FxCop.CustomRuleSdk
                 var currentInstruction = new CustomInstruction();
                 currentInstruction.Offset = fxCopInstruction.Offset;
                 currentInstruction.OpCode = fxCopInstruction.OpCode;
+                currentInstruction.Value = fxCopInstruction.Value;
+
+                if (currentInstruction.OpCode == OpCode.Newarr ||
+                    currentInstruction.OpCode == OpCode.Newobj)
+                {
+                    //CustomParameterCollection parameters = new CustomParameterCollection();
+                    var stub = currentInstruction.Value as Method;
+
+                    if (stub != null)
+                    {
+                        CustomMethod currentMethod = new CustomMethod();
+                        currentMethod.IsStatic = (fxCopInstruction.Value as Method).IsStatic;
+                        currentMethod.Signature = (fxCopInstruction.Value as Method).FullName;
+
+                        if ((fxCopInstruction.Value as Method).ReturnType.ToString() == "Microsoft.FxCop.Sdk.Struct:System.Void")
+                        {
+                            currentMethod.IsReturnTypeVoid = true;
+                        }
+                        else
+                        {
+                            currentMethod.IsReturnTypeVoid = false;
+                        }
+
+                        currentMethod.NumberOfParameters = (fxCopInstruction.Value as Method).Parameters.Count;
+
+                        currentInstruction.Value = currentMethod;
+                    }
+                }
+
+                // Now override the value for conditions that are of interest to us.
+                if (currentInstruction.OpCode == OpCode.Call ||
+                    currentInstruction.OpCode == OpCode.Callvirt ||
+                    currentInstruction.OpCode == OpCode.Calli)
+                {
+                    CustomMethod currentMethod = new CustomMethod();
+                    currentMethod.IsStatic = (fxCopInstruction.Value as Method).IsStatic;
+                    currentMethod.Signature = (fxCopInstruction.Value as Method).FullName;
+
+                    if ((fxCopInstruction.Value as Method).ReturnType.ToString() == "Microsoft.FxCop.Sdk.Struct:System.Void")
+                    {
+                        currentMethod.IsReturnTypeVoid = true;
+                    }
+                    else
+                    {
+                        currentMethod.IsReturnTypeVoid = false;
+                    }
+
+                    currentMethod.NumberOfParameters = (fxCopInstruction.Value as Method).Parameters.Count;
+
+                    currentInstruction.Value = currentMethod;
+                }
 
                 var localValue = fxCopInstruction.Value as Local;
 
-                if (localValue == null)
+                if (localValue != null)
                 {
-                    currentInstruction.Value = fxCopInstruction.Value;
-                }
-                else
-                {
-                    currentInstruction.Value = new CustomLocal() { Name = localValue.Name.Name };                   
+                    currentInstruction.Value = new CustomLocal() { Name = localValue.Name.Name };                     
                 }
 
                 instructionList.Add(currentInstruction);

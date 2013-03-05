@@ -70,5 +70,16 @@ namespace Srl.FxCop.CustomDeveloperTestRules.TestTargets
             _barMock.VerifyAllExpectations();
             _fooMock.VerifyAllExpectations();
         }
+
+
+        //[Test]
+        public void FooBaree()
+        {
+            ISomethingWithAProperty localMock = MockRepository.GenerateMock<ISomethingWithAProperty>();
+
+            System.Console.WriteLine("Foo");
+
+            localMock.Expect(x => x.SomeProperty = new object());
+        }
     }
 }

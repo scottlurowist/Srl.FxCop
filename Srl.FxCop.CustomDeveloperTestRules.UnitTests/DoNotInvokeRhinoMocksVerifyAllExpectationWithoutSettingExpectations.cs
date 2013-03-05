@@ -40,7 +40,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
         {
             // Arrange
             IList<CustomInstruction> instructionsForMethod =
-                GetInstructionsForCanRaiseProblemWhenVerifyAllExpectationsIsInvokedAndNoExpectationIsSet();
+                GetInstructionsForTestMethodWhereVerifyAllExpectationsOnAMockIsInvokedAndExpectationsAreNotSet();
 
             var helper = new Helpers.DoNotInvokeRhinoMocksVerifyAllExpectationWithoutSettingExpectations();
 
@@ -73,7 +73,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
         {
             // Arrange
             IList<CustomInstruction> instructionsForMethod =
-                GetInstructionsForCannotRaiseProblemWhenVerifyAllExpectationsIsInvokedAndAnExpectationIsSet();
+                GetInstructionsForTestMethodWhereVerifyAllExpectationsOnAMockIsInvokedAndAnExpectationIsSet();
 
             var helper = new Helpers.DoNotInvokeRhinoMocksVerifyAllExpectationWithoutSettingExpectations();
 
@@ -100,7 +100,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
         {
             // Arrange
             IList<CustomInstruction> instructionsForMethod =
-                GetInstructionsForCanRaiseProblemWhenVerifyAllExpectationsIsInvokedOnTwoMocksAndOneExpectationIsSet();
+                GetInstructionsForTestMethodWhereVerifyAllExpectationsIsInvokedOnTwoMocksButOneExpectationIsSet();
 
             var helper = new Helpers.DoNotInvokeRhinoMocksVerifyAllExpectationWithoutSettingExpectations();
 
@@ -133,7 +133,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
         {
             // Arrange
             IList<CustomInstruction> instructionsForMethod =
-                GetInstructionsForCanRaiseTwoProblemsWhenVerifyAllExpectationsIsInvokedOnTwoMocksAndNoExpectationsAreSet();
+                GetInstructionsForTestMethodWhereVerifyAllExpectationsIsInvokedOnTwoMocksButNoExpectationsAreSet();
 
             var helper = new Helpers.DoNotInvokeRhinoMocksVerifyAllExpectationWithoutSettingExpectations();
 
@@ -168,12 +168,16 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
         /// A list of instructions that was empirically obtained from
         /// DoNotInvokeRhinoMocksVerifyAllExpectationWithoutSettingExpectationsTarget.cs
         /// </returns>
-        IList<CustomInstruction> GetInstructionsForCanRaiseProblemWhenVerifyAllExpectationsIsInvokedAndNoExpectationIsSet()
+        IList<CustomInstruction> GetInstructionsForTestMethodWhereVerifyAllExpectationsOnAMockIsInvokedAndExpectationsAreNotSet()
         {
             IList<CustomInstruction> instructionList = new List<CustomInstruction>();
 
+            CustomInstruction instruction;
+            CustomMethod meth;
+            CustomLocal custLocal;
+
             // CIL Instruction 1.
-            CustomInstruction instruction = new CustomInstruction();
+            instruction = new CustomInstruction();
             instruction.Offset = 0;
             instruction.OpCode = OpCode._Locals;
             instruction.Value = "{Microsoft.FxCop.Sdk.LocalCollection}";
@@ -192,8 +196,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 1;
             instruction.OpCode = OpCode.Ldarg_0;
-            instruction.Value =
-                "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
+            instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
 
             instructionList.Add(instruction);
 
@@ -201,8 +204,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 2;
             instruction.OpCode = OpCode.Ldfld;
-            instruction.Value =
-                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}";
+            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}";
 
             instructionList.Add(instruction);
 
@@ -210,8 +212,12 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 7;
             instruction.OpCode = OpCode.Call;
-            instruction.Value =
-                "{Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations}";
+            meth = new CustomMethod();
+            meth.IsReturnTypeVoid = true;
+            meth.IsStatic = true;
+            meth.NumberOfParameters = 1;
+            meth.Signature = "{Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations(System.Object)}";
+            instruction.Value = meth;
 
             instructionList.Add(instruction);
 
@@ -242,12 +248,16 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
         /// A list of instructions that was empirically obtained from
         /// DoNotInvokeRhinoMocksVerifyAllExpectationWithoutSettingExpectationsTarget.cs
         /// </returns>
-        IList<CustomInstruction> GetInstructionsForCannotRaiseProblemWhenVerifyAllExpectationsIsInvokedAndAnExpectationIsSet()
+        IList<CustomInstruction> GetInstructionsForTestMethodWhereVerifyAllExpectationsOnAMockIsInvokedAndAnExpectationIsSet()
         {
             IList<CustomInstruction> instructionList = new List<CustomInstruction>();
 
+            CustomInstruction instruction;
+            CustomMethod meth;
+            CustomLocal custLocal;
+
             // CIL Instruction 1.
-            CustomInstruction instruction = new CustomInstruction();
+            instruction = new CustomInstruction();
             instruction.Offset = 0;
             instruction.OpCode = OpCode._Locals;
             instruction.Value = "{Microsoft.FxCop.Sdk.LocalCollection}";
@@ -266,8 +276,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 1;
             instruction.OpCode = OpCode.Ldarg_0;
-            instruction.Value =
-                "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
+            instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
 
             instructionList.Add(instruction);
 
@@ -275,8 +284,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 2;
             instruction.OpCode = OpCode.Ldfld;
-            instruction.Value =
-                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}";
+            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}";
 
             instructionList.Add(instruction);
 
@@ -284,8 +292,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 7;
             instruction.OpCode = OpCode.Ldsfld;
-            instruction.Value =
-                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.CS$<>9__CachedAnonymousMethodDelegate1}";
+            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.CS$<>9__CachedAnonymousMethodDelegate1}";
 
             instructionList.Add(instruction);
 
@@ -309,8 +316,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 15;
             instruction.OpCode = OpCode.Ldftn;
-            instruction.Value = 
-                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.<TestMethodWhereVerifyAllExpectationsOnAMockIsInvokedAndExpectationsAreSet>b__0}";
+            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.<TestMethodWhereVerifyAllExpectationsOnAMockIsInvokedAndAnExpectationIsSet>b__0}";
 
             instructionList.Add(instruction);
 
@@ -350,7 +356,12 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 38;
             instruction.OpCode = OpCode.Call;
-            instruction.Value = "{Rhino.Mocks.RhinoMocksExtensions.Expect<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>}";
+            meth = new CustomMethod();
+            meth.IsReturnTypeVoid = false;
+            meth.IsStatic = true;
+            meth.NumberOfParameters = 2;
+            meth.Signature = "{Rhino.Mocks.RhinoMocksExtensions.Expect<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>(Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar,System.Action`1<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>)}";
+            instruction.Value = meth;
 
             instructionList.Add(instruction);
 
@@ -366,8 +377,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 44;
             instruction.OpCode = OpCode.Ldarg_0;
-            instruction.Value = 
-                "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
+            instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
 
             instructionList.Add(instruction);
 
@@ -375,8 +385,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 45;
             instruction.OpCode = OpCode.Ldfld;
-            instruction.Value =
-                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}";
+            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}";
 
             instructionList.Add(instruction);
 
@@ -384,8 +393,12 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 50;
             instruction.OpCode = OpCode.Call;
-            instruction.Value =
-                "{Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations}";
+            meth = new CustomMethod();
+            meth.IsReturnTypeVoid = true;
+            meth.IsStatic = true;
+            meth.NumberOfParameters = 1;
+            meth.Signature = "{Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations(System.Object)}";
+            instruction.Value = meth;
 
             instructionList.Add(instruction);
 
@@ -416,12 +429,16 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
         /// A list of instructions that was empirically obtained from
         /// DoNotInvokeRhinoMocksVerifyAllExpectationWithoutSettingExpectationsTarget.cs
         /// </returns>
-        IList<CustomInstruction> GetInstructionsForCanRaiseProblemWhenVerifyAllExpectationsIsInvokedOnTwoMocksAndOneExpectationIsSet()
+        IList<CustomInstruction> GetInstructionsForTestMethodWhereVerifyAllExpectationsIsInvokedOnTwoMocksButOneExpectationIsSet()
         {
             IList<CustomInstruction> instructionList = new List<CustomInstruction>();
 
+            CustomInstruction instruction;
+            CustomMethod meth;
+            CustomLocal custLocal;
+
             // CIL Instruction 1.
-            CustomInstruction instruction = new CustomInstruction();
+            instruction = new CustomInstruction();
             instruction.Offset = 0;
             instruction.OpCode = OpCode._Locals;
             instruction.Value = "{Microsoft.FxCop.Sdk.LocalCollection}";
@@ -440,8 +457,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 1;
             instruction.OpCode = OpCode.Ldarg_0;
-            instruction.Value =
-                "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
+            instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
 
             instructionList.Add(instruction);
 
@@ -449,8 +465,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 2;
             instruction.OpCode = OpCode.Ldfld;
-            instruction.Value =
-                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}";
+            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}";
 
             instructionList.Add(instruction);
 
@@ -458,8 +473,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 7;
             instruction.OpCode = OpCode.Ldsfld;
-            instruction.Value =
-                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.CS$<>9__CachedAnonymousMethodDelegate1}";
+            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.CS$<>9__CachedAnonymousMethodDelegate3}";
 
             instructionList.Add(instruction);
 
@@ -483,8 +497,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 15;
             instruction.OpCode = OpCode.Ldftn;
-            instruction.Value =
-                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.<TestMethodWhereVerifyAllExpectationsOnAMockIsInvokedAndExpectationsAreSet>b__0}";
+            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.<TestMethodWhereVerifyAllExpectationsIsInvokedOnTwoMocksButOneExpectationIsSet>b__2}";
 
             instructionList.Add(instruction);
 
@@ -500,7 +513,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 26;
             instruction.OpCode = OpCode.Stsfld;
-            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.CS$<>9__CachedAnonymousMethodDelegate1}";
+            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.CS$<>9__CachedAnonymousMethodDelegate3}";
 
             instructionList.Add(instruction);
 
@@ -516,7 +529,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 33;
             instruction.OpCode = OpCode.Ldsfld;
-            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.CS$<>9__CachedAnonymousMethodDelegate1}";
+            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.CS$<>9__CachedAnonymousMethodDelegate3}";
 
             instructionList.Add(instruction);
 
@@ -524,7 +537,12 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 38;
             instruction.OpCode = OpCode.Call;
-            instruction.Value = "{Rhino.Mocks.RhinoMocksExtensions.Expect<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>}";
+            meth = new CustomMethod();
+            meth.IsReturnTypeVoid = false;
+            meth.IsStatic = true;
+            meth.NumberOfParameters = 2;
+            meth.Signature = "{Rhino.Mocks.RhinoMocksExtensions.Expect<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>(Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar,System.Action`1<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>)}";
+            instruction.Value = meth;
 
             instructionList.Add(instruction);
 
@@ -540,8 +558,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 44;
             instruction.OpCode = OpCode.Ldarg_0;
-            instruction.Value =
-                "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
+            instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
 
             instructionList.Add(instruction);
 
@@ -549,8 +566,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 45;
             instruction.OpCode = OpCode.Ldfld;
-            instruction.Value =
-                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}";
+            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}";
 
             instructionList.Add(instruction);
 
@@ -558,8 +574,12 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 50;
             instruction.OpCode = OpCode.Call;
-            instruction.Value =
-                "{Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations}";
+            meth = new CustomMethod();
+            meth.IsReturnTypeVoid = true;
+            meth.IsStatic = true;
+            meth.NumberOfParameters = 1;
+            meth.Signature = "{Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations(System.Object)}";
+            instruction.Value = meth;
 
             instructionList.Add(instruction);
 
@@ -575,8 +595,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 56;
             instruction.OpCode = OpCode.Ldarg_0;
-            instruction.Value = 
-                "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
+            instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
 
             instructionList.Add(instruction);
 
@@ -584,8 +603,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 57;
             instruction.OpCode = OpCode.Ldfld;
-            instruction.Value =
-                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._fooMock}";
+            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._fooMock}";
 
             instructionList.Add(instruction);
 
@@ -593,7 +611,12 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 62;
             instruction.OpCode = OpCode.Call;
-            instruction.Value = "{Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations}";
+            meth = new CustomMethod();
+            meth.IsReturnTypeVoid = true;
+            meth.IsStatic = true;
+            meth.NumberOfParameters = 1;
+            meth.Signature = "{Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations(System.Object)}";
+            instruction.Value = meth;
 
             instructionList.Add(instruction);
 
@@ -602,6 +625,8 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction.Offset = 67;
             instruction.OpCode = OpCode.Nop;
             instruction.Value = null;
+
+            instructionList.Add(instruction);
 
             // CIL Instruction 23.
             instruction = new CustomInstruction();
@@ -622,12 +647,16 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
         /// A list of instructions that was empirically obtained from
         /// DoNotInvokeRhinoMocksVerifyAllExpectationWithoutSettingExpectationsTarget.cs
         /// </returns>
-        IList<CustomInstruction> GetInstructionsForCanRaiseTwoProblemsWhenVerifyAllExpectationsIsInvokedOnTwoMocksAndNoExpectationsAreSet()
+        IList<CustomInstruction> GetInstructionsForTestMethodWhereVerifyAllExpectationsIsInvokedOnTwoMocksButNoExpectationsAreSet()
         {
             IList<CustomInstruction> instructionList = new List<CustomInstruction>();
 
+            CustomInstruction instruction;
+            CustomMethod meth;
+            CustomLocal custLocal;
+
             // CIL Instruction 1.
-            CustomInstruction instruction = new CustomInstruction();
+            instruction = new CustomInstruction();
             instruction.Offset = 0;
             instruction.OpCode = OpCode._Locals;
             instruction.Value = "{Microsoft.FxCop.Sdk.LocalCollection}";
@@ -646,8 +675,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 1;
             instruction.OpCode = OpCode.Ldarg_0;
-            instruction.Value =
-                "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
+            instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
 
             instructionList.Add(instruction);
 
@@ -655,8 +683,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 2;
             instruction.OpCode = OpCode.Ldfld;
-            instruction.Value =
-                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}";
+            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}";
 
             instructionList.Add(instruction);
 
@@ -664,8 +691,12 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 7;
             instruction.OpCode = OpCode.Call;
-            instruction.Value =
-                "{Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations}";
+            meth = new CustomMethod();
+            meth.IsReturnTypeVoid = true;
+            meth.IsStatic = true;
+            meth.NumberOfParameters = 1;
+            meth.Signature = "{Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations(System.Object)}";
+            instruction.Value = meth;
 
             instructionList.Add(instruction);
 
@@ -681,8 +712,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 13;
             instruction.OpCode = OpCode.Ldarg_0;
-            instruction.Value =
-                "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
+            instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}";
 
             instructionList.Add(instruction);
 
@@ -690,8 +720,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 14;
             instruction.OpCode = OpCode.Ldfld;
-            instruction.Value = 
-                "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._fooMock}";
+            instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._fooMock}";
 
             instructionList.Add(instruction);
 
@@ -699,8 +728,12 @@ namespace Srl.FxCop.CustomDeveloperTestRules.UnitTests
             instruction = new CustomInstruction();
             instruction.Offset = 19;
             instruction.OpCode = OpCode.Call;
-            instruction.Value =
-                "{Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations}";
+            meth = new CustomMethod();
+            meth.IsReturnTypeVoid = true;
+            meth.IsStatic = true;
+            meth.NumberOfParameters = 1;
+            meth.Signature = "{Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations(System.Object)}";
+            instruction.Value = meth;
 
             instructionList.Add(instruction);
 

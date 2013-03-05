@@ -1,0 +1,194 @@
+0 - Opcode = _Locals    Offset = 0     Value = {Microsoft.FxCop.Sdk.LocalCollection}                                                               
+1 - Opcode = Nop        Offset = 0     Value = null                                                                                                
+2 - Opcode = Newobj     Offset = 1     Value = {Signature = McKesson.TPP.DataAccess.DomainModel.Entities.Batch.#ctor IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 0}
+3 - Opcode = Stloc_S    Offset = 6     Value = {Name = <>g__initLocal7}                                                                            
+4 - Opcode = Ldloc_S    Offset = 8     Value = {Name = <>g__initLocal7}                                                                            
+5 - Opcode = Ldc_I4     Offset = 10    Value = {2009}                                                                                              
+6 - Opcode = Ldc_I4_S   Offset = 15    Value = {12}                                                                                                
+7 - Opcode = Ldc_I4_S   Offset = 17    Value = {23}                                                                                                
+8 - Opcode = Newobj     Offset = 19    Value = {Signature = System.DateTime.#ctor(System.Int32,System.Int32,System.Int32) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 3}
+9 - Opcode = Callvirt   Offset = 24    Value = {Signature = McKesson.TPP.DataAccess.DomainModel.Entities.Batch.set_DateCreated(System.DateTime) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+10 - Opcode = Nop        Offset = 29    Value = null                                                                                                
+11 - Opcode = Ldloc_S    Offset = 30    Value = {Name = <>g__initLocal7}                                                                            
+12 - Opcode = Ldc_I4     Offset = 32    Value = {2009}                                                                                              
+13 - Opcode = Ldc_I4_1   Offset = 37    Value = {1}                                                                                                 
+14 - Opcode = Ldc_I4_1   Offset = 38    Value = {1}                                                                                                 
+15 - Opcode = Newobj     Offset = 39    Value = {Signature = System.DateTime.#ctor(System.Int32,System.Int32,System.Int32) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 3}
+16 - Opcode = Newobj     Offset = 44    Value = {Signature = System.Nullable`1<System.DateTime>.#ctor(System.DateTime) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+17 - Opcode = Callvirt   Offset = 49    Value = {Signature = McKesson.TPP.DataAccess.DomainModel.Entities.Batch.set_ArchivedDate(System.Nullable`1<System.DateTime>) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+18 - Opcode = Nop        Offset = 54    Value = null                                                                                                
+19 - Opcode = Ldloc_S    Offset = 55    Value = {Name = <>g__initLocal7}                                                                            
+20 - Opcode = Ldstr      Offset = 57    Value = {N}                                                                                                 
+21 - Opcode = Callvirt   Offset = 62    Value = {Signature = McKesson.TPP.DataAccess.DomainModel.Entities.Batch.set_ArchivedFlag(System.String) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+22 - Opcode = Nop        Offset = 67    Value = null                                                                                                
+23 - Opcode = Ldloc_S    Offset = 68    Value = {Name = <>g__initLocal7}                                                                            
+24 - Opcode = Ldstr      Offset = 70    Value = {12345}                                                                                             
+25 - Opcode = Callvirt   Offset = 75    Value = {Signature = McKesson.TPP.DataAccess.DomainModel.Entities.Batch.set_Checksum(System.String) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+26 - Opcode = Nop        Offset = 80    Value = null                                                                                                
+27 - Opcode = Ldloc_S    Offset = 81    Value = {Name = <>g__initLocal7}                                                                            
+28 - Opcode = Ldstr      Offset = 83    Value = {c:bcbc.txt}                                                                                      
+29 - Opcode = Callvirt   Offset = 88    Value = {Signature = McKesson.TPP.DataAccess.DomainModel.Entities.Batch.set_Filename(System.String) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+30 - Opcode = Nop        Offset = 93    Value = null                                                                                                
+31 - Opcode = Ldloc_S    Offset = 94    Value = {Name = <>g__initLocal7}                                                                            
+32 - Opcode = Ldstr      Offset = 96    Value = {temp}                                                                                              
+33 - Opcode = Callvirt   Offset = 101   Value = {Signature = McKesson.TPP.DataAccess.DomainModel.Entities.Batch.set_HostName(System.String) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+34 - Opcode = Nop        Offset = 106   Value = null                                                                                                
+35 - Opcode = Ldloc_S    Offset = 107   Value = {Name = <>g__initLocal7}                                                                            
+36 - Opcode = Ldc_I4     Offset = 109   Value = {200}                                                                                               
+37 - Opcode = Conv_I8    Offset = 114   Value = null                                                                                                
+38 - Opcode = Newobj     Offset = 115   Value = {Signature = System.Nullable`1<System.Int64>.#ctor(System.Int64) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+39 - Opcode = Callvirt   Offset = 120   Value = {Signature = McKesson.TPP.DataAccess.DomainModel.Entities.Batch.set_NumClaimSetSubmitted(System.Nullable`1<System.Int64>) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+40 - Opcode = Nop        Offset = 125   Value = null                                                                                                
+41 - Opcode = Ldloc_S    Offset = 126   Value = {Name = <>g__initLocal7}                                                                            
+42 - Opcode = Ldstr      Offset = 128   Value = {c:	emp	emp.txt}                                                                                    
+43 - Opcode = Callvirt   Offset = 133   Value = {Signature = McKesson.TPP.DataAccess.DomainModel.Entities.Batch.set_OriginalFilename(System.String) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+44 - Opcode = Nop        Offset = 138   Value = null                                                                                                
+45 - Opcode = Ldloc_S    Offset = 139   Value = {Name = <>g__initLocal7}                                                                            
+46 - Opcode = Stloc_0    Offset = 141   Value = {Name = batch}                                                                                      
+47 - Opcode = Newobj     Offset = 142   Value = {Signature = McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet.#ctor IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 0}
+48 - Opcode = Stloc_S    Offset = 147   Value = {Name = <>g__initLocal8}                                                                            
+49 - Opcode = Ldloc_S    Offset = 149   Value = {Name = <>g__initLocal8}                                                                            
+50 - Opcode = Ldc_I4     Offset = 151   Value = {2009}                                                                                              
+51 - Opcode = Ldc_I4_S   Offset = 156   Value = {12}                                                                                                
+52 - Opcode = Ldc_I4_S   Offset = 158   Value = {23}                                                                                                
+53 - Opcode = Newobj     Offset = 160   Value = {Signature = System.DateTime.#ctor(System.Int32,System.Int32,System.Int32) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 3}
+54 - Opcode = Callvirt   Offset = 165   Value = {Signature = McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet.set_DateCreated(System.DateTime) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+55 - Opcode = Nop        Offset = 170   Value = null                                                                                                
+56 - Opcode = Ldloc_S    Offset = 171   Value = {Name = <>g__initLocal8}                                                                            
+57 - Opcode = Ldstr      Offset = 173   Value = {ABC}                                                                                               
+58 - Opcode = Callvirt   Offset = 178   Value = {Signature = McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet.set_Workflow(System.String) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+59 - Opcode = Nop        Offset = 183   Value = null                                                                                                
+60 - Opcode = Ldloc_S    Offset = 184   Value = {Name = <>g__initLocal8}                                                                            
+61 - Opcode = Ldloc_0    Offset = 186   Value = {Name = batch}                                                                                      
+62 - Opcode = Callvirt   Offset = 187   Value = {Signature = McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet.set_Batch(McKesson.TPP.DataAccess.DomainModel.Entities.Batch) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+63 - Opcode = Nop        Offset = 192   Value = null                                                                                                
+64 - Opcode = Ldloc_S    Offset = 193   Value = {Name = <>g__initLocal8}                                                                            
+65 - Opcode = Ldstr      Offset = 195   Value = {123434343323}                                                                                      
+66 - Opcode = Callvirt   Offset = 200   Value = {Signature = McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet.set_CustomerTransactionId(System.String) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+67 - Opcode = Nop        Offset = 205   Value = null                                                                                                
+68 - Opcode = Ldloc_S    Offset = 206   Value = {Name = <>g__initLocal8}                                                                            
+69 - Opcode = Stloc_1    Offset = 208   Value = {Name = claimSet}                                                                                   
+70 - Opcode = Newobj     Offset = 209   Value = {Signature = System.Collections.Generic.List`1<McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet>.#ctor IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 0}
+71 - Opcode = Stloc_2    Offset = 214   Value = {Name = claimSetList}                                                                               
+72 - Opcode = Ldloc_2    Offset = 215   Value = {Name = claimSetList}                                                                               
+73 - Opcode = Ldloc_1    Offset = 216   Value = {Name = claimSet}                                                                                   
+74 - Opcode = Callvirt   Offset = 217   Value = {Signature = System.Collections.Generic.List`1<McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet>.Add(McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+75 - Opcode = Nop        Offset = 222   Value = null                                                                                                
+76 - Opcode = Ldarg_0    Offset = 223   Value = {Microsoft.FxCop.Sdk.ClassNode:McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest this}
+77 - Opcode = Ldfld      Offset = 224   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest._claimSetDao}                
+78 - Opcode = Ldarg_0    Offset = 229   Value = {Microsoft.FxCop.Sdk.ClassNode:McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest this}
+79 - Opcode = Ldfld      Offset = 230   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest._batchDao}                   
+80 - Opcode = Ldarg_1    Offset = 235   Value = {Microsoft.FxCop.Sdk.Struct:System.Int32 timeOutMinutes}                                            
+81 - Opcode = Ldc_I4_0   Offset = 236   Value = {0}                                                                                                 
+82 - Opcode = Newobj     Offset = 237   Value = {Signature = McKesson.TPP.BusinessLibrary.Providers.BatchMonitorProvider.#ctor(McKesson.TPP.DataAccess.DAL.Interfaces.IClaimSetDao,McKesson.TPP.DataAccess.DAL.Interfaces.IBatchDao,System.Int32,System.Int32) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 4}
+83 - Opcode = Stloc_3    Offset = 242   Value = {Name = batchMonitorProvider}                                                                       
+84 - Opcode = Ldc_I4_0   Offset = 243   Value = {0}                                                                                                 
+85 - Opcode = Newarr     Offset = 244   Value = {Microsoft.FxCop.Sdk.ClassNode:System.Object}                                                       
+86 - Opcode = Call       Offset = 249   Value = {Signature = Rhino.Mocks.MockRepository.GenerateStub<McKesson.TPP.Framework.Infrastructure.NonWcfServiceHost>(System.Object[]) IsReturnTypeVoid = False IsStatic = True NumberOfParameters = 1}
+87 - Opcode = Stloc_S    Offset = 254   Value = {Name = serviceHostStub}                                                                            
+88 - Opcode = Ldloc_S    Offset = 256   Value = {Name = serviceHostStub}                                                                            
+89 - Opcode = Ldc_I4_0   Offset = 258   Value = {0}                                                                                                 
+90 - Opcode = Volatile_  Offset = 259   Value = null                                                                                                
+91 - Opcode = Stfld      Offset = 261   Value = {McKesson.TPP.Framework.Infrastructure.NonWcfServiceHost.StopRequested}                             
+92 - Opcode = Ldloc_3    Offset = 266   Value = {Name = batchMonitorProvider}                                                                       
+93 - Opcode = Ldloc_S    Offset = 267   Value = {Name = serviceHostStub}                                                                            
+94 - Opcode = Callvirt   Offset = 269   Value = {Signature = McKesson.TPP.BusinessLibrary.Providers.BatchMonitorProvider.set_ServiceHost(McKesson.TPP.Framework.Infrastructure.NonWcfServiceHost) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 1}
+95 - Opcode = Nop        Offset = 274   Value = null                                                                                                
+96 - Opcode = Ldarg_3    Offset = 275   Value = {Microsoft.FxCop.Sdk.Struct:System.Boolean isClaimSetTrue}                                          
+97 - Opcode = Ldc_I4_0   Offset = 276   Value = {0}                                                                                                 
+98 - Opcode = Ceq        Offset = 277   Value = null                                                                                                
+99 - Opcode = Stloc_S    Offset = 279   Value = {Name = CS$4$0000}                                                                                  
+100 - Opcode = Ldloc_S    Offset = 281   Value = {Name = CS$4$0000}                                                                                  
+101 - Opcode = Brtrue_S   Offset = 283   Value = {336}                                                                                               
+102 - Opcode = Ldarg_0    Offset = 285   Value = {Microsoft.FxCop.Sdk.ClassNode:McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest this}
+103 - Opcode = Ldfld      Offset = 286   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest._claimSetDao}                
+104 - Opcode = Ldsfld     Offset = 291   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.CS$<>9__CachedAnonymousMethodDelegatee}
+105 - Opcode = Brtrue_S   Offset = 296   Value = {317}                                                                                               
+106 - Opcode = Ldnull     Offset = 298   Value = null                                                                                                
+107 - Opcode = Ldftn      Offset = 299   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.<TestMonitorBatchTimeoutException>b__9}
+108 - Opcode = Newobj     Offset = 305   Value = {Signature = Rhino.Mocks.Function`2<McKesson.TPP.DataAccess.DAL.Interfaces.IClaimSetDao,System.Collections.Generic.IList`1<McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet>>.#ctor(System.Object,System.IntPtr) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 2}
+109 - Opcode = Stsfld     Offset = 310   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.CS$<>9__CachedAnonymousMethodDelegatee}
+110 - Opcode = Br_S       Offset = 315   Value = {317}                                                                                               
+111 - Opcode = Ldsfld     Offset = 317   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.CS$<>9__CachedAnonymousMethodDelegatee}
+112 - Opcode = Call       Offset = 322   Value = {Signature = Rhino.Mocks.RhinoMocksExtensions.Expect<McKesson.TPP.DataAccess.DAL.Interfaces.IClaimSetDao,System.Collections.Generic.IList`1<McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet>>(McKesson.TPP.DataAccess.DAL.Interfaces.IClaimSetDao,Rhino.Mocks.Function`2<McKesson.TPP.DataAccess.DAL.Interfaces.IClaimSetDao,System.Collections.Generic.IList`1<McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet>>) IsReturnTypeVoid = False IsStatic = True NumberOfParameters = 2}
+113 - Opcode = Ldloc_2    Offset = 327   Value = {Name = claimSetList}                                                                               
+114 - Opcode = Callvirt   Offset = 328   Value = {Signature = Rhino.Mocks.Interfaces.IMethodOptions`1<System.Collections.Generic.IList`1<McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet>>.Return(System.Collections.Generic.IList`1<McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet>) IsReturnTypeVoid = False IsStatic = False NumberOfParameters = 1}
+115 - Opcode = Pop        Offset = 333   Value = null                                                                                                
+116 - Opcode = Br_S       Offset = 334   Value = {385}                                                                                               
+117 - Opcode = Ldarg_0    Offset = 336   Value = {Microsoft.FxCop.Sdk.ClassNode:McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest this}
+118 - Opcode = Ldfld      Offset = 337   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest._claimSetDao}                
+119 - Opcode = Ldsfld     Offset = 342   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.CS$<>9__CachedAnonymousMethodDelegatef}
+120 - Opcode = Brtrue_S   Offset = 347   Value = {368}                                                                                               
+121 - Opcode = Ldnull     Offset = 349   Value = null                                                                                                
+122 - Opcode = Ldftn      Offset = 350   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.<TestMonitorBatchTimeoutException>b__a}
+123 - Opcode = Newobj     Offset = 356   Value = {Signature = Rhino.Mocks.Function`2<McKesson.TPP.DataAccess.DAL.Interfaces.IClaimSetDao,System.Collections.Generic.IList`1<McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet>>.#ctor(System.Object,System.IntPtr) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 2}
+124 - Opcode = Stsfld     Offset = 361   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.CS$<>9__CachedAnonymousMethodDelegatef}
+125 - Opcode = Br_S       Offset = 366   Value = {368}                                                                                               
+126 - Opcode = Ldsfld     Offset = 368   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.CS$<>9__CachedAnonymousMethodDelegatef}
+127 - Opcode = Call       Offset = 373   Value = {Signature = Rhino.Mocks.RhinoMocksExtensions.Expect<McKesson.TPP.DataAccess.DAL.Interfaces.IClaimSetDao,System.Collections.Generic.IList`1<McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet>>(McKesson.TPP.DataAccess.DAL.Interfaces.IClaimSetDao,Rhino.Mocks.Function`2<McKesson.TPP.DataAccess.DAL.Interfaces.IClaimSetDao,System.Collections.Generic.IList`1<McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet>>) IsReturnTypeVoid = False IsStatic = True NumberOfParameters = 2}
+128 - Opcode = Ldnull     Offset = 378   Value = null                                                                                                
+129 - Opcode = Callvirt   Offset = 379   Value = {Signature = Rhino.Mocks.Interfaces.IMethodOptions`1<System.Collections.Generic.IList`1<McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet>>.Return(System.Collections.Generic.IList`1<McKesson.TPP.DataAccess.DomainModel.Entities.ClaimSet>) IsReturnTypeVoid = False IsStatic = False NumberOfParameters = 1}
+130 - Opcode = Pop        Offset = 384   Value = null                                                                                                
+131 - Opcode = Ldarg_2    Offset = 385   Value = {Microsoft.FxCop.Sdk.Struct:System.Boolean isBatchTrue}                                             
+132 - Opcode = Ldc_I4_0   Offset = 386   Value = {0}                                                                                                 
+133 - Opcode = Ceq        Offset = 387   Value = null                                                                                                
+134 - Opcode = Stloc_S    Offset = 389   Value = {Name = CS$4$0000}                                                                                  
+135 - Opcode = Ldloc_S    Offset = 391   Value = {Name = CS$4$0000}                                                                                  
+136 - Opcode = Brtrue_S   Offset = 393   Value = {446}                                                                                               
+137 - Opcode = Ldarg_0    Offset = 395   Value = {Microsoft.FxCop.Sdk.ClassNode:McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest this}
+138 - Opcode = Ldfld      Offset = 396   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest._batchDao}                   
+139 - Opcode = Ldsfld     Offset = 401   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.CS$<>9__CachedAnonymousMethodDelegate10}
+140 - Opcode = Brtrue_S   Offset = 406   Value = {427}                                                                                               
+141 - Opcode = Ldnull     Offset = 408   Value = null                                                                                                
+142 - Opcode = Ldftn      Offset = 409   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.<TestMonitorBatchTimeoutException>b__b}
+143 - Opcode = Newobj     Offset = 415   Value = {Signature = Rhino.Mocks.Function`2<McKesson.TPP.DataAccess.DAL.Interfaces.IBatchDao,McKesson.TPP.DataAccess.DomainModel.Entities.Batch>.#ctor(System.Object,System.IntPtr) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 2}
+144 - Opcode = Stsfld     Offset = 420   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.CS$<>9__CachedAnonymousMethodDelegate10}
+145 - Opcode = Br_S       Offset = 425   Value = {427}                                                                                               
+146 - Opcode = Ldsfld     Offset = 427   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.CS$<>9__CachedAnonymousMethodDelegate10}
+147 - Opcode = Call       Offset = 432   Value = {Signature = Rhino.Mocks.RhinoMocksExtensions.Expect<McKesson.TPP.DataAccess.DAL.Interfaces.IBatchDao,McKesson.TPP.DataAccess.DomainModel.Entities.Batch>(McKesson.TPP.DataAccess.DAL.Interfaces.IBatchDao,Rhino.Mocks.Function`2<McKesson.TPP.DataAccess.DAL.Interfaces.IBatchDao,McKesson.TPP.DataAccess.DomainModel.Entities.Batch>) IsReturnTypeVoid = False IsStatic = True NumberOfParameters = 2}
+148 - Opcode = Ldloc_0    Offset = 437   Value = {Name = batch}                                                                                      
+149 - Opcode = Callvirt   Offset = 438   Value = {Signature = Rhino.Mocks.Interfaces.IMethodOptions`1<McKesson.TPP.DataAccess.DomainModel.Entities.Batch>.Return(McKesson.TPP.DataAccess.DomainModel.Entities.Batch) IsReturnTypeVoid = False IsStatic = False NumberOfParameters = 1}
+150 - Opcode = Pop        Offset = 443   Value = null                                                                                                
+151 - Opcode = Br_S       Offset = 444   Value = {495}                                                                                               
+152 - Opcode = Ldarg_0    Offset = 446   Value = {Microsoft.FxCop.Sdk.ClassNode:McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest this}
+153 - Opcode = Ldfld      Offset = 447   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest._batchDao}                   
+154 - Opcode = Ldsfld     Offset = 452   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.CS$<>9__CachedAnonymousMethodDelegate11}
+155 - Opcode = Brtrue_S   Offset = 457   Value = {478}                                                                                               
+156 - Opcode = Ldnull     Offset = 459   Value = null                                                                                                
+157 - Opcode = Ldftn      Offset = 460   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.<TestMonitorBatchTimeoutException>b__c}
+158 - Opcode = Newobj     Offset = 466   Value = {Signature = Rhino.Mocks.Function`2<McKesson.TPP.DataAccess.DAL.Interfaces.IBatchDao,McKesson.TPP.DataAccess.DomainModel.Entities.Batch>.#ctor(System.Object,System.IntPtr) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 2}
+159 - Opcode = Stsfld     Offset = 471   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.CS$<>9__CachedAnonymousMethodDelegate11}
+160 - Opcode = Br_S       Offset = 476   Value = {478}                                                                                               
+161 - Opcode = Ldsfld     Offset = 478   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.CS$<>9__CachedAnonymousMethodDelegate11}
+162 - Opcode = Call       Offset = 483   Value = {Signature = Rhino.Mocks.RhinoMocksExtensions.Expect<McKesson.TPP.DataAccess.DAL.Interfaces.IBatchDao,McKesson.TPP.DataAccess.DomainModel.Entities.Batch>(McKesson.TPP.DataAccess.DAL.Interfaces.IBatchDao,Rhino.Mocks.Function`2<McKesson.TPP.DataAccess.DAL.Interfaces.IBatchDao,McKesson.TPP.DataAccess.DomainModel.Entities.Batch>) IsReturnTypeVoid = False IsStatic = True NumberOfParameters = 2}
+163 - Opcode = Ldnull     Offset = 488   Value = null                                                                                                
+164 - Opcode = Callvirt   Offset = 489   Value = {Signature = Rhino.Mocks.Interfaces.IMethodOptions`1<McKesson.TPP.DataAccess.DomainModel.Entities.Batch>.Return(McKesson.TPP.DataAccess.DomainModel.Entities.Batch) IsReturnTypeVoid = False IsStatic = False NumberOfParameters = 1}
+165 - Opcode = Pop        Offset = 494   Value = null                                                                                                
+166 - Opcode = Ldarg_0    Offset = 495   Value = {Microsoft.FxCop.Sdk.ClassNode:McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest this}
+167 - Opcode = Ldfld      Offset = 496   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest._batchDao}                   
+168 - Opcode = Ldsfld     Offset = 501   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.CS$<>9__CachedAnonymousMethodDelegate12}
+169 - Opcode = Brtrue_S   Offset = 506   Value = {527}                                                                                               
+170 - Opcode = Ldnull     Offset = 508   Value = null                                                                                                
+171 - Opcode = Ldftn      Offset = 509   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.<TestMonitorBatchTimeoutException>b__d}
+172 - Opcode = Newobj     Offset = 515   Value = {Signature = Rhino.Mocks.Function`2<McKesson.TPP.DataAccess.DAL.Interfaces.IBatchDao,McKesson.TPP.DataAccess.DomainModel.Entities.Batch>.#ctor(System.Object,System.IntPtr) IsReturnTypeVoid = True IsStatic = False NumberOfParameters = 2}
+173 - Opcode = Stsfld     Offset = 520   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.CS$<>9__CachedAnonymousMethodDelegate12}
+174 - Opcode = Br_S       Offset = 525   Value = {527}                                                                                               
+175 - Opcode = Ldsfld     Offset = 527   Value = {McKesson.TPP.BusinessLibrary.Providers.Tests.BatchMonitorProviderTest.CS$<>9__CachedAnonymousMethodDelegate12}
+176 - Opcode = Call       Offset = 532   Value = {Signature = Rhino.Mocks.RhinoMocksExtensions.Expect<McKesson.TPP.DataAccess.DAL.Interfaces.IBatchDao,McKesson.TPP.DataAccess.DomainModel.Entities.Batch>(McKesson.TPP.DataAccess.DAL.Interfaces.IBatchDao,Rhino.Mocks.Function`2<McKesson.TPP.DataAccess.DAL.Interfaces.IBatchDao,McKesson.TPP.DataAccess.DomainModel.Entities.Batch>) IsReturnTypeVoid = False IsStatic = True NumberOfParameters = 2}
+177 - Opcode = Ldloc_0    Offset = 537   Value = {Name = batch}                                                                                      
+178 - Opcode = Callvirt   Offset = 538   Value = {Signature = Rhino.Mocks.Interfaces.IMethodOptions`1<McKesson.TPP.DataAccess.DomainModel.Entities.Batch>.Return(McKesson.TPP.DataAccess.DomainModel.Entities.Batch) IsReturnTypeVoid = False IsStatic = False NumberOfParameters = 1}
+179 - Opcode = Pop        Offset = 543   Value = null                                                                                                
+180 - Opcode = Ldloc_3    Offset = 544   Value = {Name = batchMonitorProvider}                                                                       
+181 - Opcode = Ldc_I4_1   Offset = 545   Value = {1}                                                                                                 
+182 - Opcode = Conv_I8    Offset = 546   Value = null                                                                                                
+183 - Opcode = Ldc_I4_S   Offset = 547   Value = {100}                                                                                               
+184 - Opcode = Conv_I8    Offset = 549   Value = null                                                                                                
+185 - Opcode = Callvirt   Offset = 550   Value = {Signature = McKesson.TPP.BusinessLibrary.Providers.BatchMonitorProvider.MonitorBatch(System.Int64,System.Int64) IsReturnTypeVoid = False IsStatic = False NumberOfParameters = 2}
+186 - Opcode = Stloc_S    Offset = 555   Value = {Name = ret}                                                                                        
+187 - Opcode = Ldloc_S    Offset = 557   Value = {Name = ret}                                                                                        
+188 - Opcode = Box        Offset = 559   Value = {Microsoft.FxCop.Sdk.Struct:System.Boolean}                                                         
+189 - Opcode = Ldc_I4_0   Offset = 564   Value = {0}                                                                                                 
+190 - Opcode = Box        Offset = 565   Value = {Microsoft.FxCop.Sdk.Struct:System.Boolean}                                                         
+191 - Opcode = Call       Offset = 570   Value = {Signature = NUnit.Framework.Assert.AreEqual(System.Object,System.Object) IsReturnTypeVoid = True IsStatic = True NumberOfParameters = 2}
+192 - Opcode = Nop        Offset = 575   Value = null                                                                                                
+193 - Opcode = Ret        Offset = 576   Value = null                                                                                                

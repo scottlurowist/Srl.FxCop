@@ -86,6 +86,8 @@
   <ItemGroup>
     <Compile Include="BaseCustomFxCopRule.cs" />
     <Compile Include="CommonHelpers.cs" />
+    <Compile Include="CustomParameterCollection.cs" />
+    <Compile Include="CustomMethod.cs" />
     <Compile Include="CustomLocal.cs" />
     <Compile Include="CustomProblem.cs" />
     <Compile Include="CustomField.cs" />

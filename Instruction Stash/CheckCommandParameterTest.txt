@@ -1,0 +1,109 @@
+0 - Opcode = _Locals    Offset = 0     Value = {Microsoft.FxCop.Sdk.LocalCollection}                                                               
+1 - Opcode = Ldnull     Offset = 0     Value = null                                                                                                
+2 - Opcode = Stloc_S    Offset = 1     Value = {Name = CS$<>9__CachedAnonymousMethodDelegate5}                                                     
+3 - Opcode = Stloc_S    Offset = 8     Value = {Name = CS$<>8__locals7}                                                                            
+4 - Opcode = Nop        Offset = 10    Value = null                                                                                                
+5 - Opcode = Ldc_I4_0   Offset = 11    Value = {0}                                                                                                 
+6 - Opcode = Stloc_0    Offset = 12    Value = {Name = bDirectoryCreated}                                                                          
+7 - Opcode = Stloc_1    Offset = 18    Value = {Name = projectPath}                                                                                
+8 - Opcode = Ldloc_S    Offset = 19    Value = {Name = CS$<>8__locals7}                                                                            
+9 - Opcode = Ldc_I4_3   Offset = 21    Value = {3}                                                                                                 
+10 - Opcode = Stloc_S    Offset = 27    Value = {Name = CS$0$0000}                                                                                  
+11 - Opcode = Ldloc_S    Offset = 29    Value = {Name = CS$0$0000}                                                                                  
+12 - Opcode = Ldc_I4_0   Offset = 31    Value = {0}                                                                                                 
+13 - Opcode = Ldstr      Offset = 32    Value = {Framework}                                                                                         
+14 - Opcode = Stelem_Ref Offset = 37    Value = null                                                                                                
+15 - Opcode = Ldloc_S    Offset = 38    Value = {Name = CS$0$0000}                                                                                  
+16 - Opcode = Ldc_I4_1   Offset = 40    Value = {1}                                                                                                 
+17 - Opcode = Ldarg_0    Offset = 41    Value = {Microsoft.FxCop.Sdk.ClassNode:McKesson.TPP.Tools.DBBuild.Test.Console.ArgumentsValidatorTest this} 
+18 - Opcode = Ldfld      Offset = 42    Value = {McKesson.TPP.Tools.DBBuild.Test.Console.ArgumentsValidatorTest._oraCredentials}                    
+19 - Opcode = Stelem_Ref Offset = 47    Value = null                                                                                                
+20 - Opcode = Ldloc_S    Offset = 48    Value = {Name = CS$0$0000}                                                                                  
+21 - Opcode = Ldc_I4_2   Offset = 50    Value = {2}                                                                                                 
+22 - Opcode = Ldstr      Offset = 51    Value = {someUnknownCommand}                                                                                
+23 - Opcode = Stelem_Ref Offset = 56    Value = null                                                                                                
+24 - Opcode = Ldloc_S    Offset = 57    Value = {Name = CS$0$0000}                                                                                  
+25 - Opcode = Stfld      Offset = 59    Value = {McKesson.TPP.Tools.DBBuild.Test.Console.ArgumentsValidatorTest+<>c__DisplayClass6.args}            
+26 - Opcode = Ldloc_1    Offset = 64    Value = {Name = projectPath}                                                                                
+27 - Opcode = Ldloc_S    Offset = 65    Value = {Name = CS$<>8__locals7}                                                                            
+28 - Opcode = Ldfld      Offset = 67    Value = {McKesson.TPP.Tools.DBBuild.Test.Console.ArgumentsValidatorTest+<>c__DisplayClass6.args}            
+29 - Opcode = Ldc_I4_0   Offset = 72    Value = {0}                                                                                                 
+30 - Opcode = Ldelem_Ref Offset = 73    Value = null                                                                                                
+31 - Opcode = Stloc_2    Offset = 79    Value = {Name = path}                                                                                       
+32 - Opcode = Stloc_S    Offset = 85    Value = {Name = <>g__initLocal2}                                                                            
+33 - Opcode = Ldloc_S    Offset = 87    Value = {Name = <>g__initLocal2}                                                                            
+34 - Opcode = Ldloc_1    Offset = 89    Value = {Name = projectPath}                                                                                
+35 - Opcode = Nop        Offset = 95    Value = null                                                                                                
+36 - Opcode = Ldloc_S    Offset = 96    Value = {Name = <>g__initLocal2}                                                                            
+37 - Opcode = Stloc_3    Offset = 98    Value = {Name = settings}                                                                                   
+38 - Opcode = _Try       Offset = 99    Value = null                                                                                                
+39 - Opcode = Nop        Offset = 99    Value = null                                                                                                
+40 - Opcode = Ldloc_2    Offset = 100   Value = {Name = path}                                                                                       
+41 - Opcode = Stloc_S    Offset = 106   Value = {Name = CS$4$0001}                                                                                  
+42 - Opcode = Ldloc_S    Offset = 108   Value = {Name = CS$4$0001}                                                                                  
+43 - Opcode = Brtrue_S   Offset = 110   Value = {123}                                                                                               
+44 - Opcode = Nop        Offset = 112   Value = null                                                                                                
+45 - Opcode = Ldloc_2    Offset = 113   Value = {Name = path}                                                                                       
+46 - Opcode = Pop        Offset = 119   Value = null                                                                                                
+47 - Opcode = Ldc_I4_1   Offset = 120   Value = {1}                                                                                                 
+48 - Opcode = Stloc_0    Offset = 121   Value = {Name = bDirectoryCreated}                                                                          
+49 - Opcode = Nop        Offset = 122   Value = null                                                                                                
+50 - Opcode = Stloc_S    Offset = 128   Value = {Name = outM}                                                                                       
+51 - Opcode = Ldc_I4_0   Offset = 130   Value = {0}                                                                                                 
+52 - Opcode = Stloc_S    Offset = 141   Value = {Name = dbMock}                                                                                     
+53 - Opcode = Ldloc_S    Offset = 143   Value = {Name = dbMock}                                                                                     
+54 - Opcode = Ldloc_S    Offset = 145   Value = {Name = CS$<>9__CachedAnonymousMethodDelegate5}                                                     
+55 - Opcode = Brtrue_S   Offset = 147   Value = {166}                                                                                               
+56 - Opcode = Ldloc_S    Offset = 149   Value = {Name = CS$<>8__locals7}                                                                            
+57 - Opcode = Ldftn      Offset = 151   Value = {McKesson.TPP.Tools.DBBuild.Test.Console.ArgumentsValidatorTest+<>c__DisplayClass6.<CheckCommandParameterTest>b__4}
+58 - Opcode = Stloc_S    Offset = 162   Value = {Name = CS$<>9__CachedAnonymousMethodDelegate5}                                                     
+59 - Opcode = Br_S       Offset = 164   Value = {166}                                                                                               
+60 - Opcode = Ldloc_S    Offset = 166   Value = {Name = CS$<>9__CachedAnonymousMethodDelegate5}                                                     
+61 - Opcode = Stloc_S    Offset = 178   Value = {Name = <>g__initLocal3}                                                                            
+62 - Opcode = Ldloc_S    Offset = 180   Value = {Name = <>g__initLocal3}                                                                            
+63 - Opcode = Ldc_I4_1   Offset = 182   Value = {1}                                                                                                 
+64 - Opcode = Nop        Offset = 188   Value = null                                                                                                
+65 - Opcode = Ldloc_S    Offset = 189   Value = {Name = <>g__initLocal3}                                                                            
+66 - Opcode = Pop        Offset = 196   Value = null                                                                                                
+67 - Opcode = Ldloc_3    Offset = 197   Value = {Name = settings}                                                                                   
+68 - Opcode = Ldloc_S    Offset = 198   Value = {Name = CS$<>8__locals7}                                                                            
+69 - Opcode = Ldfld      Offset = 200   Value = {McKesson.TPP.Tools.DBBuild.Test.Console.ArgumentsValidatorTest+<>c__DisplayClass6.args}            
+70 - Opcode = Ldloc_S    Offset = 205   Value = {Name = outM}                                                                                       
+71 - Opcode = Ldloc_S    Offset = 207   Value = {Name = dbMock}                                                                                     
+72 - Opcode = Stloc_S    Offset = 214   Value = {Name = validator}                                                                                  
+73 - Opcode = Ldloc_S    Offset = 216   Value = {Name = validator}                                                                                  
+74 - Opcode = Stloc_S    Offset = 223   Value = {Name = ra}                                                                                         
+75 - Opcode = Ldloc_S    Offset = 225   Value = {Name = dbMock}                                                                                     
+76 - Opcode = Nop        Offset = 232   Value = null                                                                                                
+77 - Opcode = Ldloc_S    Offset = 233   Value = {Name = ra}                                                                                         
+78 - Opcode = Box        Offset = 240   Value = {Microsoft.FxCop.Sdk.Struct:System.Boolean}                                                         
+79 - Opcode = Ldc_I4_0   Offset = 245   Value = {0}                                                                                                 
+80 - Opcode = Box        Offset = 246   Value = {Microsoft.FxCop.Sdk.Struct:System.Boolean}                                                         
+81 - Opcode = Nop        Offset = 261   Value = null                                                                                                
+82 - Opcode = Ldloc_S    Offset = 262   Value = {Name = ra}                                                                                         
+83 - Opcode = Ldloc_S    Offset = 269   Value = {Name = outM}                                                                                       
+84 - Opcode = Ldstr      Offset = 271   Value = {ArgumentsError_Command}                                                                            
+85 - Opcode = Ldloc_S    Offset = 281   Value = {Name = CS$<>8__locals7}                                                                            
+86 - Opcode = Ldfld      Offset = 283   Value = {McKesson.TPP.Tools.DBBuild.Test.Console.ArgumentsValidatorTest+<>c__DisplayClass6.args}            
+87 - Opcode = Ldc_I4_2   Offset = 288   Value = {2}                                                                                                 
+88 - Opcode = Ldelem_Ref Offset = 289   Value = null                                                                                                
+89 - Opcode = Nop        Offset = 305   Value = null                                                                                                
+90 - Opcode = Nop        Offset = 306   Value = null                                                                                                
+91 - Opcode = Leave_S    Offset = 307   Value = {329}                                                                                               
+92 - Opcode = _EndTry    Offset = 309   Value = {Instruction OpCode=_Try}                                                                           
+93 - Opcode = _Finally   Offset = 309   Value = null                                                                                                
+94 - Opcode = Nop        Offset = 309   Value = null                                                                                                
+95 - Opcode = Ldloc_0    Offset = 310   Value = {Name = bDirectoryCreated}                                                                          
+96 - Opcode = Ldc_I4_0   Offset = 311   Value = {0}                                                                                                 
+97 - Opcode = Ceq        Offset = 312   Value = null                                                                                                
+98 - Opcode = Stloc_S    Offset = 314   Value = {Name = CS$4$0001}                                                                                  
+99 - Opcode = Ldloc_S    Offset = 316   Value = {Name = CS$4$0001}                                                                                  
+100 - Opcode = Brtrue_S   Offset = 318   Value = {327}                                                                                               
+101 - Opcode = Ldloc_2    Offset = 320   Value = {Name = path}                                                                                       
+102 - Opcode = Nop        Offset = 326   Value = null                                                                                                
+103 - Opcode = Nop        Offset = 327   Value = null                                                                                                
+104 - Opcode = Endfinally Offset = 328   Value = null                                                                                                
+105 - Opcode = _EndHandler Offset = 329   Value = {Instruction OpCode=_Finally}                                                                       
+106 - Opcode = Nop        Offset = 329   Value = null                                                                                                
+107 - Opcode = Nop        Offset = 330   Value = null                                                                                                
+108 - Opcode = Ret        Offset = 331   Value = null                                                                                                

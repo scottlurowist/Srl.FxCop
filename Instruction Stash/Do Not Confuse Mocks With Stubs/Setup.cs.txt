@@ -1,0 +1,211 @@
+IList<CustomInstruction> instructionList = new List<CustomInstruction>();
+
+CustomInstruction instruction;
+CustomMethod meth;
+CustomLocal custLocal;
+
+// CIL Instruction 1.
+instruction = new CustomInstruction();
+instruction.Offset = 0;
+instruction.OpCode = OpCode._Locals;
+instruction.Value = "{Microsoft.FxCop.Sdk.LocalCollection}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 2.
+instruction = new CustomInstruction();
+instruction.Offset = 0;
+instruction.OpCode = OpCode.Nop;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 3.
+instruction = new CustomInstruction();
+instruction.Offset = 1;
+instruction.OpCode = OpCode.Ldarg_0;
+instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget this}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 4.
+instruction = new CustomInstruction();
+instruction.Offset = 2;
+instruction.OpCode = OpCode.Ldc_I4_0;
+instruction.Value = 0;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 5.
+instruction = new CustomInstruction();
+instruction.Offset = 3;
+instruction.OpCode = OpCode.Newarr;
+instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:System.Object}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 6.
+instruction = new CustomInstruction();
+instruction.Offset = 8;
+instruction.OpCode = OpCode.Call;
+meth = new CustomMethod();
+meth.IsReturnTypeVoid = false;
+meth.IsStatic = true;
+meth.NumberOfParameters = 1;
+meth.Signature = "{Rhino.Mocks.MockRepository.GenerateStub<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>(System.Object[])}";
+instruction.Value = meth;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 7.
+instruction = new CustomInstruction();
+instruction.Offset = 13;
+instruction.OpCode = OpCode.Stfld;
+instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget._barStub}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 8.
+instruction = new CustomInstruction();
+instruction.Offset = 18;
+instruction.OpCode = OpCode.Ldarg_0;
+instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget this}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 9.
+instruction = new CustomInstruction();
+instruction.Offset = 19;
+instruction.OpCode = OpCode.Ldc_I4_0;
+instruction.Value = 0;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 10.
+instruction = new CustomInstruction();
+instruction.Offset = 20;
+instruction.OpCode = OpCode.Newarr;
+instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:System.Object}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 11.
+instruction = new CustomInstruction();
+instruction.Offset = 25;
+instruction.OpCode = OpCode.Call;
+meth = new CustomMethod();
+meth.IsReturnTypeVoid = false;
+meth.IsStatic = true;
+meth.NumberOfParameters = 1;
+meth.Signature = "{Rhino.Mocks.MockRepository.GenerateMock<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>(System.Object[])}";
+instruction.Value = meth;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 12.
+instruction = new CustomInstruction();
+instruction.Offset = 30;
+instruction.OpCode = OpCode.Stfld;
+instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget._barMock}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 13.
+instruction = new CustomInstruction();
+instruction.Offset = 35;
+instruction.OpCode = OpCode.Ldarg_0;
+instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget this}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 14.
+instruction = new CustomInstruction();
+instruction.Offset = 36;
+instruction.OpCode = OpCode.Ldc_I4_0;
+instruction.Value = 0;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 15.
+instruction = new CustomInstruction();
+instruction.Offset = 37;
+instruction.OpCode = OpCode.Newarr;
+instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:System.Object}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 16.
+instruction = new CustomInstruction();
+instruction.Offset = 42;
+instruction.OpCode = OpCode.Call;
+meth = new CustomMethod();
+meth.IsReturnTypeVoid = false;
+meth.IsStatic = true;
+meth.NumberOfParameters = 1;
+meth.Signature = "{Rhino.Mocks.MockRepository.GenerateStub<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>(System.Object[])}";
+instruction.Value = meth;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 17.
+instruction = new CustomInstruction();
+instruction.Offset = 47;
+instruction.OpCode = OpCode.Stfld;
+instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget._barStubTwo}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 18.
+instruction = new CustomInstruction();
+instruction.Offset = 52;
+instruction.OpCode = OpCode.Ldarg_0;
+instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget this}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 19.
+instruction = new CustomInstruction();
+instruction.Offset = 53;
+instruction.OpCode = OpCode.Ldc_I4_0;
+instruction.Value = 0;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 20.
+instruction = new CustomInstruction();
+instruction.Offset = 54;
+instruction.OpCode = OpCode.Newarr;
+instruction.Value = "{Microsoft.FxCop.Sdk.ClassNode:System.Object}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 21.
+instruction = new CustomInstruction();
+instruction.Offset = 59;
+instruction.OpCode = OpCode.Call;
+meth = new CustomMethod();
+meth.IsReturnTypeVoid = false;
+meth.IsStatic = true;
+meth.NumberOfParameters = 1;
+meth.Signature = "{Rhino.Mocks.MockRepository.GenerateMock<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>(System.Object[])}";
+instruction.Value = meth;
+
+instructionList.Add(instruction);
+
+// CIL Instruction 22.
+instruction = new CustomInstruction();
+instruction.Offset = 64;
+instruction.OpCode = OpCode.Stfld;
+instruction.Value = "{Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget._barMockTwo}";
+
+instructionList.Add(instruction);
+
+// CIL Instruction 23.
+instruction = new CustomInstruction();
+instruction.Offset = 69;
+instruction.OpCode = OpCode.Ret;
+instruction.Value = null;
+
+instructionList.Add(instruction);
+
+return instructionList;

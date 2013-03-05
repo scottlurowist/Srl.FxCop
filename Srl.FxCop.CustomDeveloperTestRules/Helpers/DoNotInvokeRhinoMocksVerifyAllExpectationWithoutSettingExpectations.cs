@@ -49,15 +49,15 @@ namespace Srl.FxCop.CustomDeveloperTestRules.Helpers
         /// FxCop is analyzing.
         /// </param>
         public IList<CustomProblem> CheckIfRhinoMocksVerifyAllExpectationsIsInvokedAndNoExpecationsAreSet(String methodName,
-            /*IList<CustomInstruction> setupMethodInstructions,*/
             IList<CustomInstruction> testMethodInstructions)
         {
-            //if (methodName == "TestMethodWhereVerifyAllExpectationsIsInvokedOnTwoMocksButNoExpectationsAreSet")
-            //{
-            //    Srl.FxCop.CustomRuleSdk.DevTools.Instructions.WriteInstructionListForMethodToTextFile(testMethodInstructions,
-            //        @"c:\users\ex6m1sk\desktop\instructions.txt");
-            //}
-
+            if (methodName == "TestMonitorBatchTimeoutException")
+            {
+                Srl.FxCop.CustomRuleSdk.DevTools.Instructions.WriteInstructionListForMethodToTextFile(testMethodInstructions,
+                    @"c:\users\ex6m1sk\desktop\TestMonitorBatchTimeoutException.txt");
+                Srl.FxCop.CustomRuleSdk.DevTools.Instructions.GenerateCSharpCodeFromInstructionListForUnitTests(testMethodInstructions,
+                    @"c:\users\ex6m1sk\desktop\TestMonitorBatchTimeoutException.cs.txt");
+            }
             IList<CustomProblem> problemsFound = new List<CustomProblem>();
 
             IList<string> mocksOrStubsInvokingExpect = new List<string>();
@@ -73,7 +73,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.Helpers
                     // it to our list of mocks and stubs.
                     CustomInstruction instructionThatLoadsMockOrStub = 
                         CommonHelpers
-                            .GetInstructionThatLoadsTheTargetOfAnExtensionMethodWithLamda(customInstruction,
+                            .GetInstructionThatLoadsTheTargetOfAnExtensionMethod(customInstruction,
                                                                                           testMethodInstructions);
 
                     mocksOrStubsInvokingExpect

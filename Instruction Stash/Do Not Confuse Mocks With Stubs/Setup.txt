@@ -1,0 +1,23 @@
+0 - Opcode = _Locals    Offset = 0     Value = {Microsoft.FxCop.Sdk.LocalCollection}                                                               
+1 - Opcode = Nop        Offset = 0     Value = null                                                                                                
+2 - Opcode = Ldarg_0    Offset = 1     Value = {Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget this}
+3 - Opcode = Ldc_I4_0   Offset = 2     Value = {0}                                                                                                 
+4 - Opcode = Newarr     Offset = 3     Value = {Microsoft.FxCop.Sdk.ClassNode:System.Object}                                                       
+5 - Opcode = Call       Offset = 8     Value = {Signature = Rhino.Mocks.MockRepository.GenerateStub<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>(System.Object[]) IsReturnTypeVoid = False IsStatic = True NumberOfParameters = 1}
+6 - Opcode = Stfld      Offset = 13    Value = {Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget._barStub}
+7 - Opcode = Ldarg_0    Offset = 18    Value = {Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget this}
+8 - Opcode = Ldc_I4_0   Offset = 19    Value = {0}                                                                                                 
+9 - Opcode = Newarr     Offset = 20    Value = {Microsoft.FxCop.Sdk.ClassNode:System.Object}                                                       
+10 - Opcode = Call       Offset = 25    Value = {Signature = Rhino.Mocks.MockRepository.GenerateMock<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>(System.Object[]) IsReturnTypeVoid = False IsStatic = True NumberOfParameters = 1}
+11 - Opcode = Stfld      Offset = 30    Value = {Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget._barMock}
+12 - Opcode = Ldarg_0    Offset = 35    Value = {Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget this}
+13 - Opcode = Ldc_I4_0   Offset = 36    Value = {0}                                                                                                 
+14 - Opcode = Newarr     Offset = 37    Value = {Microsoft.FxCop.Sdk.ClassNode:System.Object}                                                       
+15 - Opcode = Call       Offset = 42    Value = {Signature = Rhino.Mocks.MockRepository.GenerateStub<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>(System.Object[]) IsReturnTypeVoid = False IsStatic = True NumberOfParameters = 1}
+16 - Opcode = Stfld      Offset = 47    Value = {Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget._barStubTwo}
+17 - Opcode = Ldarg_0    Offset = 52    Value = {Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget this}
+18 - Opcode = Ldc_I4_0   Offset = 53    Value = {0}                                                                                                 
+19 - Opcode = Newarr     Offset = 54    Value = {Microsoft.FxCop.Sdk.ClassNode:System.Object}                                                       
+20 - Opcode = Call       Offset = 59    Value = {Signature = Rhino.Mocks.MockRepository.GenerateMock<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>(System.Object[]) IsReturnTypeVoid = False IsStatic = True NumberOfParameters = 1}
+21 - Opcode = Stfld      Offset = 64    Value = {Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotConfuseRhinoMocksStubsWithMocksTarget._barMockTwo}
+22 - Opcode = Ret        Offset = 69    Value = null                                                                                                

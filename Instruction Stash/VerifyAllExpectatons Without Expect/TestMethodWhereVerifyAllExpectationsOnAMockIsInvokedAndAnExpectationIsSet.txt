@@ -1,0 +1,19 @@
+0 - Opcode = _Locals    Offset = 0     Value = {Microsoft.FxCop.Sdk.LocalCollection}                                                               
+1 - Opcode = Nop        Offset = 0     Value = null                                                                                                
+2 - Opcode = Ldarg_0    Offset = 1     Value = {Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}
+3 - Opcode = Ldfld      Offset = 2     Value = {Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}
+4 - Opcode = Ldsfld     Offset = 7     Value = {Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.CS$<>9__CachedAnonymousMethodDelegate1}
+5 - Opcode = Brtrue_S   Offset = 12    Value = {33}                                                                                                
+6 - Opcode = Ldnull     Offset = 14    Value = null                                                                                                
+7 - Opcode = Ldftn      Offset = 15    Value = {Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.<TestMethodWhereVerifyAllExpectationsOnAMockIsInvokedAndAnExpectationIsSet>b__0}
+8 - Opcode = Newobj     Offset = 21    Value = {System.Action<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>(Microsoft.FxCop.Sdk.ParameterCollection)}
+9 - Opcode = Stsfld     Offset = 26    Value = {Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.CS$<>9__CachedAnonymousMethodDelegate1}
+10 - Opcode = Br_S       Offset = 31    Value = {33}                                                                                                
+11 - Opcode = Ldsfld     Offset = 33    Value = {Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget.CS$<>9__CachedAnonymousMethodDelegate1}
+12 - Opcode = Call       Offset = 38    Value = {Signature = Rhino.Mocks.RhinoMocksExtensions.Expect<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>(Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar,System.Action`1<Srl.FxCop.CustomDeveloperTestRules.TestTargets.IBar>) IsReturnTypeVoid = False IsStatic = True NumberOfParameters = 2}
+13 - Opcode = Pop        Offset = 43    Value = null                                                                                                
+14 - Opcode = Ldarg_0    Offset = 44    Value = {Microsoft.FxCop.Sdk.ClassNode:Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget this}
+15 - Opcode = Ldfld      Offset = 45    Value = {Srl.FxCop.CustomDeveloperTestRules.TestTargets.DoNotInvokeRhinoMocksVerifyAllExpectationsWithoutSettingExpectationsTarget._barMock}
+16 - Opcode = Call       Offset = 50    Value = {Signature = Rhino.Mocks.RhinoMocksExtensions.VerifyAllExpectations(System.Object) IsReturnTypeVoid = True IsStatic = True NumberOfParameters = 1}
+17 - Opcode = Nop        Offset = 55    Value = null                                                                                                
+18 - Opcode = Ret        Offset = 56    Value = null                                                                                                

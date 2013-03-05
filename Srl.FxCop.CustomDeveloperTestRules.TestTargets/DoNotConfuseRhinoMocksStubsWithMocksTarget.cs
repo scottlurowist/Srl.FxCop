@@ -49,7 +49,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.TestTargets
         }
 
 
-        //[Test]
+        [Test]
         public void TestMethodWhereAFieldStubIsInvokedWithVerifyAllExpectations()
         {
             _barStub.VerifyAllExpectations();
@@ -64,7 +64,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.TestTargets
         }
 
 
-        //[Test]
+        [Test]
         public void TestMethodWhereALocalStubIsInvokedWithVerifyAllExpectations()
         {
             IBar localStub = MockRepository.GenerateStub<IBar>();
@@ -72,7 +72,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.TestTargets
         }
 
 
-        [Test]
+        //[Test]
         public void TestMethodWhereAFieldStubIsInvokedWithExpect()
         {
             _barStub.Expect(x => x.DoSomethingBarRelated());
@@ -90,7 +90,7 @@ namespace Srl.FxCop.CustomDeveloperTestRules.TestTargets
 
 
         //[Test]
-        public void TestMethodWithALocalStubUsedAsAStub()
+        public void TestMethodWhereALocalStubUsedAsAStub()
         {
             // We need the locals to generate the various stfld instructions.
             int x = 4;

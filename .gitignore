@@ -4,3 +4,5 @@
 *.user
 _ReSharp*FxCop/
 results.xml
+Settings.StyleCop
+StyleCop.cache
