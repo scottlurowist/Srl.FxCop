@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Srl.FxCop.CustomDeveloperTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Srl.FxCop.CustomRuleSdk.UnitTests", "Srl.FxCop.CustomRuleSdk.UnitTests\Srl.FxCop.CustomRuleSdk.UnitTests.csproj", "{A2B4C779-1168-4D9A-A049-FA077227E37A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{83030BEF-D2E3-498B-B637-B5D9904790F0}"
+	ProjectSection(SolutionItems) = preProject
+		README.txt = README.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
